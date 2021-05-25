@@ -3,6 +3,10 @@
 # Learn more about .gitignore:
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
+
+# next.js build output
+.next
+
 # Node artifact files
 node_modules/
 dist/
@@ -23,7 +27,7 @@ dist/
 target/
 dist/
 
-# JetBrains IDE
+# JetBrains IDEgit
 .idea/
 
 # Unit test reports
