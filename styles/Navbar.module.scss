@@ -1,0 +1,11 @@
+@import "variables";
+
+.menu .menu--item {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.menu .menu--item a:visited {
+  color: $black;
+  text-decoration: none;
+}
