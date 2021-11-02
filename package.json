@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start"
   },
   "repository": {
@@ -17,30 +17,8 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/Emkingdom/datatangente#readme",
   "dependencies": {
-    "@bit/mui-org.material-ui.circular-progress": "^4.9.10",
-    "@bit/mui-org.material-ui.dialog": "^4.9.10",
-    "@bit/mui-org.material-ui.dialog-actions": "^4.9.10",
-    "@bit/mui-org.material-ui.dialog-content": "^4.9.10",
-    "@bit/mui-org.material-ui.dialog-content-text": "^4.9.10",
-    "@bit/mui-org.material-ui.dialog-title": "^4.9.10",
-    "@bit/mui-org.material-ui.grid": "^4.9.10",
-    "@bit/mui-org.material-ui.styles": "^4.9.10",
-    "@bit/mui-org.material-ui.typography": "^4.9.10",
-    "@fortawesome/fontawesome-svg-core": "^1.2.35",
-    "@fortawesome/free-brands-svg-icons": "^5.15.3",
-    "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@fortawesome/react-fontawesome": "^0.1.14",
-    "@glidejs/glide": "^3.4.1",
-    "dompurify": "^2.3.1",
-    "emailjs-com": "^3.2.0",
-    "imagesloaded": "^4.1.4",
-    "jsdom": "^17.0.0",
-    "lottie-web": "^5.7.13",
-    "marked": "^3.0.0",
     "next": "^10.2.3",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-parallax": "^3.3.0",
-    "sass": "^1.34.0"
+    "react-dom": "^17.0.2"
   }
 }
