@@ -4,6 +4,7 @@
   "description": "Datatangente website",
   "main": "next.config.js",
   "dependencies": {
+    "@bit/mui-org.material-ui.circular-progress": "^4.9.10",
     "@bit/mui-org.material-ui.dialog": "^4.9.10",
     "@bit/mui-org.material-ui.dialog-actions": "^4.9.10",
     "@bit/mui-org.material-ui.dialog-content": "^4.9.10",
@@ -24,7 +25,7 @@
     "jsdom": "^17.0.0",
     "lottie-web": "^5.7.14",
     "marked": "^3.0.8",
-    "next": "^10.2.3",
+    "next": ">=11.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-parallax": "^3.3.0",
