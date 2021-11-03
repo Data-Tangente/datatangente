@@ -1,7 +1,7 @@
 {
   "name": "datatangente",
   "version": "1.0.0",
-  "description": "",
+  "description": "Datatangente website",
   "main": "next.config.js",
   "dependencies": {
     "dompurify": "^2.3.3",
@@ -28,7 +28,7 @@
     "type": "git",
     "url": "git+https://github.com/gonXalex/datatangente.git"
   },
-  "author": "",
+  "author": "Edward Gonzalez",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gonXalex/datatangente/issues"
