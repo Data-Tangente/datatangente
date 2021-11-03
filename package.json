@@ -4,7 +4,6 @@
   "description": "Datatangente website",
   "main": "next.config.js",
   "dependencies": {
-    "@bit/mui-org.material-ui.circular-progress": "^4.9.10",
     "@bit/mui-org.material-ui.dialog": "^4.9.10",
     "@bit/mui-org.material-ui.dialog-actions": "^4.9.10",
     "@bit/mui-org.material-ui.dialog-content": "^4.9.10",
