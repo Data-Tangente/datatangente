@@ -317,8 +317,8 @@ export default function PostsPage({ posts, tags, host }) {
 }
 
 export async function getStaticProps() {
-    const response = await fetch(`http://localhost:1337/posts`);
-    const tagsResponse = await fetch(`http://localhost:1337/tags`);
+    const response = await fetch(`https://datatangente.herokuapp.com/posts`);
+    const tagsResponse = await fetch(`https://datatangente.herokuapp.com/tags`);
     const tags = await tagsResponse.json();
     const posts = await response.json();
     const host = process.env.HOST;

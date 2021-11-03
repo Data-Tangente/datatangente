@@ -49,7 +49,7 @@ export default function Home({posts}) {
 
 export async function getStaticProps() {
 
-    const allPosts = await fetch(`http://localhost:1337/posts`);
+    const allPosts = await fetch(`https://datatangente.herokuapp.com/posts`);
     const allPostsData = await allPosts.json();
     const host = process.env.HOST;
 
