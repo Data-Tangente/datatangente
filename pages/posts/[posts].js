@@ -146,7 +146,7 @@ export default function PostDetailPage({post, posts, host, content}) {
 }
 
 export async function getStaticPaths() {
-    const response = await fetch("http://localhost:1337/posts");
+    const response = await fetch("https://datatangente.herokuapp.com/posts");
     const posts = await response.json();
     const paths = posts.map((post) => ({
          params: { posts: post.slug },
@@ -160,11 +160,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     const { posts } = params;
-    const response = await fetch(`http://localhost:1337/posts?slug=${posts}`);
+    const response = await fetch(`https://datatangente.herokuapp.com/posts?slug=${posts}`);
     const data = await response.json();
     const post = data[0];
 
-    const allPosts = await fetch(`http://localhost:1337/posts`);
+    const allPosts = await fetch(`https://datatangente.herokuapp.com/posts`);
     const allPostsData = await allPosts.json();
     const host = process.env.HOST;
 
