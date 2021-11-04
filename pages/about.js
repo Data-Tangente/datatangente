@@ -1,5 +1,4 @@
-import Typography from '@bit/mui-org.material-ui.typography';
-import Grid from '@bit/mui-org.material-ui.grid';
+import {Typography, Grid } from '@material-ui/core';
 
 function AboutUs() {
     return(

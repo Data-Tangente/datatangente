@@ -1,10 +1,6 @@
-import Typography from '@bit/mui-org.material-ui.typography';
-import Grid from '@bit/mui-org.material-ui.grid';
-import Dialog from '@bit/mui-org.material-ui.dialog';
-import DialogContent from '@bit/mui-org.material-ui.dialog-content';
-// import DialogActions from '@bit/mui-org.material-ui.dialog-actions';
-// import DialogContentText from '@bit/mui-org.material-ui.dialog-content-text';
+import React from 'react';
 import DialogTitle from '@bit/mui-org.material-ui.dialog-title';
+import {Typography, Grid, Dialog, DialogContent, DialogTitle} from '@material-ui/core';
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 

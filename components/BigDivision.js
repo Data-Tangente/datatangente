@@ -1,8 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@bit/mui-org.material-ui.styles';
-import Typography from '@bit/mui-org.material-ui.typography';
-import Grid from '@bit/mui-org.material-ui.grid';
-import Link from 'next/link';
+import React from 'react';
+import {Typography, Grid} from '@material-ui/core';
 import { Parallax } from 'react-parallax';
 
 function BigDivision(props) {
@@ -65,16 +62,8 @@ function BigDivision(props) {
                                 >
                                     <a href={href}>{title}</a>
                                 </Typography>
-                                {/* <Typography 
-                                    variant="body1"
-                                    className="big-division-section-body"
-                                    style={{marginTop:15, color:'#fff'}}
-                                >
-                                    {body}
-                                </Typography> */}
                             </Grid>
                         </Grid>
-                    {/* </div> */}
                     </Parallax>
                 )
             })}

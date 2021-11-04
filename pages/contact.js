@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import Typography from '@bit/mui-org.material-ui.typography';
-import Grid from '@bit/mui-org.material-ui.grid';
+import React, { useState, } from 'react';
+import {Typography, Grid } from '@material-ui/core';
 import SubsDivision from  '../components/SubscribeDivision';
 import CircularProgressLoading from '../components/Loading';
 import SimpleDialog from '../components/SimpleDialog';
