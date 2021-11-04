@@ -10,30 +10,10 @@ function AboutUs() {
                         className="about-title-text"
                     >
                         ¡CONÓCENOS UN POCO MÁS!
-                        {/* ¿QUIÉNES SOMOS? */}
                     </Typography>
-                    {/* <Typography 
-                        variant="body1"
-                        className="about-body-text"
-                        style={{marginTop:15, color:'#fff'}}
-                    >
-                        <span>
-                            Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh 
-                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
-                            minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut 
-                            aliquip ex ea commodo consequat.
-                        </span>
-                    </Typography> */}
                 </Grid>
             </div>
             <div className="about-body-container">
-                {/* <Typography 
-                    variant="h3"
-                    style={{margin:'5rem 0', color:'#f05638', letterSpacing:8, fontWeight:500, textAlign:'center'}}
-                >
-                    ¿QUIÉNES SOMOS?
-                </Typography> */}
-
                 <Typography  
                     variant="subtitle1"
                     style={{marginTop:'2rem', color:'#424242', fontWeight: 700, textAlign:'center', fontSize:'1.6rem'}}

@@ -97,22 +97,11 @@ function Contact() {
                                 CONTÁCTENOS
                             </span>
                         </Typography>
-                        {/* <Typography 
-                            variant="body1"
-                            className="contact-body-text"
-                            style={{marginTop:15, color:'#fff'}}
-                        >
-                            <span>
-                                Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy.
-                            </span>
-                        </Typography> */}
                     </Grid>
 
                     <Grid container className="contact-info-container">
                         <div className="address-container">
                             <div className="address">
-                                {/* <strong>Edificio MBG,</strong> Av. Pedro Enrique Ureña, No. 35, Gazcue,
-                                Santo Domingo, República Dominicana. */}
                                 C/ mercedes echenique #9 Edificio Rivera del sur, Santo Domingo Mirador sur
                             </div>
                             <div className="phone-number">
@@ -178,22 +167,11 @@ function Contact() {
                                         value={formInfo.org}
                                     />
                                 </div>
-                                {/* <input name="name" type="text" required className="input-subscribe" placeholder="Nombre" onChange={handleChangeInput.bind(this, 'name')} />
-                                <input 
-                                    type="email"
-                                    name="email"
-                                    required 
-                                    className="input-subscribe" 
-                                    placeholder="Email" 
-                                    onChange={handleChangeInput.bind(this, 'email')}
-                                />
-                                <input type="text" className="input-subscribe" placeholder="Empresa" name="organization" onChange={handleChangeInput.bind(this, 'org')} /> */}
                             </div>
                             <div className="message-form-message-container">
                                 <textarea
                                     type="text"
                                     required
-                                    // className="input-subscribe message" 
                                     className={"input-subscribe "+(errorList.msg && 'error' || '')+" message"}
                                     name="message" 
                                     rows="10" 
