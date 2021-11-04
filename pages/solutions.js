@@ -105,7 +105,7 @@ function Solutions(props) {
                                 </Grid>
                                 {
                                     type === 'icon-1' &&
-                                    <Grid container className="solutions-analysis-stack" direction="row" justify="space-between" style={{padding:'5rem 0'}}>
+                                    <Grid container className="solutions-analysis-stack" direction="row" justifyContent="space-between" style={{padding:'5rem 0'}}>
                                         <div>
                                             <Typography  
                                                 variant="h6"

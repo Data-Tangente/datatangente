@@ -15,7 +15,8 @@ export default function Card({posts}) {
     useEffect(() => {
         if(contentTag.length > 0) {
             contentTag.forEach(item => {
-                item.innerHTML = item.textContent.trim();
+                const content = item.textContent.trim().substring(0,400);
+                item.innerHTML = content;
             });
         }
     }, [contentTag]);
@@ -49,7 +50,10 @@ export default function Card({posts}) {
                                                 ref={ref=>contentTag[index] = ref}
                                                 className="card-post-body"
                                                 style={{
-                                                    marginTop:10, color:'#fff', fontWeight:400, 
+                                                    fontSize:'20px',
+                                                    marginTop:10, 
+                                                    color:'#fff', 
+                                                    fontWeight:400, 
                                                     overflow: 'hidden', 
                                                     width:'100%',
                                                     height: 120,
@@ -57,6 +61,13 @@ export default function Card({posts}) {
                                                 }}
                                                 dangerouslySetInnerHTML={{__html: post.content.rendered}}
                                             ></div>
+                                            <span
+                                                style={{
+                                                    fontSize:'20px',
+                                                    color:'#fff',
+                                                    fontWeight:400,
+                                                }}
+                                            >[...]</span>
                                         </Grid>
                                     </Grid>
                                 </Grid>

@@ -3,7 +3,7 @@ import {Typography, Grid} from '@material-ui/core';
 
 function Division(props) {
     return(
-        <Grid container alignItems="center" justify="center" style={{width:'100%', padding:'70px 0', backgroundColor:props.bgColor}}>
+        <Grid container alignItems="center" justifyContent="center" style={{width:'100%', padding:'70px 0', backgroundColor:props.bgColor}}>
             <Typography
                 variant="h4"
                 style={{fontStyle:'italic', color:props.textColor, letterSpacing:8}}

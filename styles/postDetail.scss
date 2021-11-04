@@ -42,6 +42,10 @@
 #post-content > p > img {
   width: 100%;
 }
+#post-content > figure > img {
+  width: 100% !important;
+  height: auto !important;
+}
 
 @media screen and (max-width: 1280px) {
   .post-content-wrapper {

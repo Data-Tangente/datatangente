@@ -16,7 +16,7 @@ export default function SimpleDialog(props) {
             open={props.open}
         >
             <DialogTitle className="dialog-header">
-                <Grid container justify="space-between" alignItems="center" className="dialog-header-title">
+                <Grid container justifyContent="space-between" alignItems="center" className="dialog-header-title">
                     <Typography component={'span'} variant="h4" className="" style={{color: '#f05638'}}>
                         {props.title}
                     </Typography>

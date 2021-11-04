@@ -68,7 +68,7 @@ function WorkedDivision(props) {
 
     return(
 
-        <Grid container alignItems="center" justify="center" style={{position:'relative',width:'100%', padding:'50px 0', backgroundColor:props.bgColor}}>
+        <Grid container alignItems="center" justifyContent="center" style={{position:'relative',width:'100%', padding:'50px 0', backgroundColor:props.bgColor}}>
             <div className="works-slideshow" style={{width:'100%', textAlign:'center'}}>
                 <div data-glide-el="track" className="glide__track">
                     <ul className="glide__slides">

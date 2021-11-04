@@ -31,8 +31,8 @@ function AboutUs() {
                 </Typography>
 
                 <div className="border-gradient horizontal" style={{marginTop:'5rem'}}></div>
-                <Grid container direction="row" justify="space-between" className="vision-mision-container">
-                    <Grid item container style={{width:'45%'}} direction="column" justify="center" alignItems="center">
+                <Grid container direction="row" justifyContent="space-between" className="vision-mision-container">
+                    <Grid item container style={{width:'45%'}} direction="column" justifyContent="center" alignItems="center">
                         <img alt="vision-icon" className="about-mision" style={{paddingTop:'1rem'}} src="/assets/mision.png" />
                         <Typography  
                             variant="h4"
@@ -49,7 +49,7 @@ function AboutUs() {
                         </Typography>
                     </Grid>
                     <div className="border-gradient vertical"></div>
-                    <Grid item container style={{width:'45%'}} direction="column" justify="center" alignItems="center">
+                    <Grid item container style={{width:'45%'}} direction="column" justifyContent="center" alignItems="center">
                         <img alt="vision-icon" className="about-vision" style={{paddingTop:'1rem'}} src="/assets/vision.png" />
                         <Typography  
                             variant="h4"

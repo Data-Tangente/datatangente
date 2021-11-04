@@ -25,14 +25,13 @@ function FilterDialog(props) {
             fullWidth
             maxWidth="sm"
             keepMounted
-            disableBackdropClick={true}
             style={{overflow: 'hidden', zIndex:10000}}
             onClose={props.toggleDialog.bind(this, 'close')}
             className="dialog-container"
             open={props.open}
         >
             <DialogTitle className="dialog-header">
-                <Grid container justify="space-evenly" alignItems="center" className="dialog-header-title">
+                <Grid container justifyContent="space-evenly" alignItems="center" className="dialog-header-title">
                     <Typography onClick={props.toggleDialog.bind(this, 'close')} component={'span'} variant="h6" className="dialog-title" style={{color: '#878787'}}>
                         ACEPTAR
                     </Typography>
@@ -171,7 +170,8 @@ export default function PostsPage({ posts, tags, host }) {
     useEffect(() => {
         if(contentTag.length > 0) {
             contentTag.forEach(item => {
-                item.innerHTML = item.textContent.trim();
+                const content = item.textContent.trim().substring(0,400);
+                item.innerHTML = content;
             });
         }
     }, [contentTag]);
@@ -190,7 +190,7 @@ export default function PostsPage({ posts, tags, host }) {
                     </Typography>
                 </div>
             </div>
-            <Grid container direction="row" alignItems="center" justify="space-between" className="nav-header-container">
+            <Grid container direction="row" alignItems="center" justifyContent="space-between" className="nav-header-container">
                 <div style={{display:'flex', flexDirection:'row', alignItems:'center'}} className="nav-filter">
                     <FilterBtn 
                         toggleDialog={handleToggleDialog}
@@ -248,7 +248,10 @@ export default function PostsPage({ posts, tags, host }) {
                                         className="card-post-body"
                                         id="card-post-body"
                                         style={{
-                                            marginTop:15, color:'#262626', fontWeight:400, 
+                                            fontSize:'22px',
+                                            marginTop:15, 
+                                            color:'#262626', 
+                                            fontWeight:400, 
                                             overflow: 'hidden', 
                                             width:'100%',
                                             height: 130,
@@ -256,6 +259,13 @@ export default function PostsPage({ posts, tags, host }) {
                                         }}
                                         dangerouslySetInnerHTML={{__html: post.content.rendered}}
                                     ></div>
+                                    <span 
+                                        style={{
+                                            fontSize:'22px',
+                                            color:'#262626', 
+                                            fontWeight:400,
+                                        }}
+                                    >[...]</span>
                                 </Grid>
                                 <Grid container direction="row" style={{width: '100%', padding:'2rem 3rem'}}>
                                     {post.tag_name.length > 0 && post.tag_name.map((item, index) => {
@@ -276,7 +286,7 @@ export default function PostsPage({ posts, tags, host }) {
                 </div>
                 }
             </Grid>
-            <Grid container direction="row" alignItems="center" justify="center" style={{paddingBottom: '10rem'}}>
+            <Grid container direction="row" alignItems="center" justifyContent="center" style={{paddingBottom: '10rem'}}>
                 <PaginationNav
                     currentPage={currentPage}
                     pageNumber={pageNumber}

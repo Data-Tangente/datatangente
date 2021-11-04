@@ -21,7 +21,8 @@ export default function PostDetailPage({post, posts, host, content}) {
     useEffect(() => {
         if(contentTag.length > 0) {
             contentTag.forEach(item => {
-                item.innerHTML = item.textContent.trim();
+                const cleanContent = item.textContent.trim().substring(0,400);
+                item.innerHTML = cleanContent;
             });
         }
     }, [contentTag]);
@@ -59,7 +60,7 @@ export default function PostDetailPage({post, posts, host, content}) {
 
                 </Grid>
 
-                <Grid container item direction="column" justify="flex-start" className="post-page-side-content">
+                <Grid container item direction="column" justifyContent="flex-start" className="post-page-side-content">
                     <div style={{alignItems:'center', flexDirection:'column', marginBottom:'2rem'}}>
                         {
                             (post.tag_name.length > 0) &&
@@ -113,15 +114,24 @@ export default function PostDetailPage({post, posts, host, content}) {
                                                     ref={ref=>contentTag[index]=ref}
                                                     className="card-post-body"
                                                     style={{
-                                                        marginTop:10, color:'#262626', fontWeight:400, 
+                                                        fontSize:'19px',
+                                                        marginTop:10, 
+                                                        color:'#262626', 
+                                                        fontWeight:400, 
                                                         overflow: 'hidden', 
                                                         width:'100%',
                                                         height: 120,
-                                                        textOverflow:'ellipsis',
                                                     }}
                                                     dangerouslySetInnerHTML={{__html: post.content.rendered}}
                                                 >
                                                 </div>
+                                                <span 
+                                                    style={{
+                                                        fontSize:'19px',
+                                                        color:'#262626', 
+                                                        fontWeight:400,
+                                                    }}
+                                                >[...]</span>
                                             </Grid>
                                         </a>
                                     </Grid>
