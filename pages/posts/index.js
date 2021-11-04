@@ -12,9 +12,6 @@ import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faCalendarAlt, faAlignLeft } from "@fortawesome/free-solid-svg-icons";
 import { dateFormat } from '../../functions/generalMethods';
 import { useRouter } from 'next/router'
-import marked from 'marked'
-import createDOMPurify from 'dompurify'
-import { JSDOM } from 'jsdom'
 
 function FilterBtn(props) {
     return(
@@ -35,7 +32,6 @@ function FilterDialog(props) {
             maxWidth="sm"
             keepMounted
             disableBackdropClick={true}
-            // style={{width: '30%', margin: '0 auto'}}
             style={{overflow: 'hidden', zIndex:10000}}
             onClose={props.toggleDialog.bind(this, 'close')}
             className="dialog-container"
@@ -72,14 +68,13 @@ function FilterDialog(props) {
                     )
                 })}
             </DialogContent>
-            {/* <div className="dialog-footer filters">
-                <span onClick={props.handleSetFilters}>APLICAR</span>
-            </div> */}
         </Dialog>
     )
 }
 
 export default function PostsPage({ posts, tags, host }) {
+
+    let contentTag = [];
     const router = useRouter();
     const [pagination, setPagination] = useState();
     const [pageNumber, setPageNumber] = useState(1);
@@ -96,7 +91,6 @@ export default function PostsPage({ posts, tags, host }) {
         }
     }
     const handleTagSelect = (tag, action) => {
-        // const preSelectedTags = selectedTags.length > 0 ? selectedTags : preSelectedTags;
         const preSelectedTags = selectedTags;
         const index = preSelectedTags.indexOf(tag);
         if(index !== -1) {
@@ -104,7 +98,6 @@ export default function PostsPage({ posts, tags, host }) {
         }else {
             preSelectedTags.push(tag);
             setSelectedTags(preSelectedTags);
-            // handleSetFilteredPosts(preSelectedTags);
         }
     }
 
@@ -112,7 +105,7 @@ export default function PostsPage({ posts, tags, host }) {
         if(tagSelection.length > 0){
             let filteredPosts = [];
             tagSelection.map(item => {
-                filteredPosts = filteredPosts.concat(posts.filter( p => p.tags.map(t => t.name).includes(item) ));
+                filteredPosts = filteredPosts.concat(posts.filter( p => p.tag_name.map(t => t).includes(item) ));
                 filteredPosts = [...new Set(filteredPosts)];
             })
             setPages(filteredPosts);
@@ -181,6 +174,14 @@ export default function PostsPage({ posts, tags, host }) {
         }
     }, []);
 
+    useEffect(() => {
+        if(contentTag.length > 0) {
+            contentTag.forEach(item => {
+                item.innerHTML = item.textContent.trim();
+            });
+        }
+    }, [contentTag]);
+
     return(
         <div style={{backgroundColor: '#fafafa'}}>
             <div className="posts-page-banner">
@@ -193,14 +194,6 @@ export default function PostsPage({ posts, tags, host }) {
                             DE TU INTERÉS, ACTUALIZADO
                         </span>
                     </Typography>
-                    {/* <Typography 
-                            variant="subtitle1"
-                            style={{marginTop:15, color:'#fff', fontSize: 20}}
-                        >
-                        <span>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                        </span>
-                    </Typography> */}
                 </div>
             </div>
             <Grid container direction="row" alignItems="center" justify="space-between" className="nav-header-container">
@@ -230,12 +223,13 @@ export default function PostsPage({ posts, tags, host }) {
             </Grid>
             <Grid container className="post-cards-container-wrapper posts-page" style={{paddingBottom: '10rem'}}>
                 {(pagination && Object.keys(pagination).length > 0)  && pagination[currentPage].map((post, index) => {
-                    const image = post.post_img && post.post_img.url;
-                    const plainTextHtml = post.content.replace(/<[^>]+>/g, '');
                     return(
-                        <Grid item container sm={12} md={6} lg={6} key={post.title+"_"+index} className="page-card-post-expand-container">
+                        <Grid item container sm={12} md={6} lg={6} key={post.title.rendered+"_"+index} className="page-card-post-expand-container">
                             <div className="card-post-container" style={{position:'relative', backgroundColor: '#fff', cursor:'auto'}}>
-                                <div style={{backgroundImage: `url(${host}${image})`, backgroundRepeat:'no-repeat', backgroundSize: 'cover', backgroundPosition:'center', width:'100%', height:'300px'}}></div>
+                                {
+                                    post.banner_img &&
+                                    <div style={{backgroundImage: `url(${post.banner_img})`, backgroundRepeat:'no-repeat', backgroundSize: 'cover', backgroundPosition:'center', width:'100%', height:'300px'}}></div>
+                                }
                                 <Grid container item direction="column" style={{padding:'2rem 3rem'}}>
                                     <Typography
                                         variant="h4"
@@ -243,7 +237,7 @@ export default function PostsPage({ posts, tags, host }) {
                                         className="all-posts-card-title"
                                     >
                                         <a href={`/posts/${post.slug}`}>
-                                            {post.title}
+                                            {post.title.rendered}
                                         </a>
                                     </Typography>
                                     <Grid container item direction="row" alignItems="center" alignContent="flex-start">
@@ -252,11 +246,11 @@ export default function PostsPage({ posts, tags, host }) {
                                             variant="subtitle1"
                                             style={{color:'#878787', fontWeight:600}}
                                         >
-                                            { dateFormat(post.published_at) }
+                                            { dateFormat(post.date) }
                                         </Typography>
                                     </Grid>
-                                    <Typography
-                                        variant="h6" 
+                                    <div
+                                        ref={ref=>contentTag[index]=ref}
                                         className="card-post-body"
                                         id="card-post-body"
                                         style={{
@@ -266,22 +260,15 @@ export default function PostsPage({ posts, tags, host }) {
                                             height: 130,
                                             textOverflow:'ellipsis',
                                         }}
-                                    >
-                                        {/* {post.content} */}
-                                        {plainTextHtml}
-                                    </Typography>
-                                    <Typography 
-                                        variant="h6"
-                                        style={{color:'#262626', fontWeight:400, }}
-                                    >
-                                        [...]
-                                    </Typography>
+                                        dangerouslySetInnerHTML={{__html: post.content.rendered}}
+                                    ></div>
                                 </Grid>
                                 <Grid container direction="row" style={{width: '100%', padding:'2rem 3rem'}}>
-                                    {post.tags && post.tags.map((item, index) => {
+                                    {post.tag_name.length > 0 && post.tag_name.map((item, index) => {
                                         return(
-                                            <div key={item.name + index} style={{margin: '0 1.5rem 1rem 0'}} onClick={handleSetFilteredPosts.bind(this, [item.name], 'singleTag')}>
-                                                <Tags tag={item.name}/>
+                                            item &&
+                                            <div key={`${item} - ${index}`} style={{margin: '0 1.5rem 1rem 0'}} onClick={handleSetFilteredPosts.bind(this, [item], 'singleTag')}>
+                                                <Tags tag={item}/>
                                             </div>
                                         )
                                     })}
@@ -317,18 +304,17 @@ export default function PostsPage({ posts, tags, host }) {
 }
 
 export async function getStaticProps() {
-    const response = await fetch(`https://datatangente.herokuapp.com/posts`);
-    const tagsResponse = await fetch(`https://datatangente.herokuapp.com/tags`);
+    const response = await fetch(`${process.env.host}/wp-json/wp/v2/posts?_embed`);
+    const tagsResponse = await fetch(`${process.env.host}/wp-json/wp/v2/tags`);
     const tags = await tagsResponse.json();
     const posts = await response.json();
-    const host = process.env.HOST;
+    const host = process.env.host;
 
-    const window = new JSDOM('').window
-    const DOMPurify = createDOMPurify(window)
-
-    posts.forEach(item => {
-        item.content = DOMPurify.sanitize(marked(item.content));
-    })
+    posts.forEach(post => {
+        const bannerImg = post._embedded['wp:featuredmedia'];
+        post.banner_img = bannerImg ? bannerImg[0].source_url : '';
+        post.tag_name = tags.map(t => (post.tags.includes(t.id) && t.name) || '').filter(tt => tt);;
+    });
 
 	return {
         props: { posts, tags, host: host}
