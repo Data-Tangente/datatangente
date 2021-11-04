@@ -58,7 +58,7 @@ function Footer(props) {
                     </div>
                 </div> */}
             </Grid>
-            <Grid container justify="space-between" className="conditions-container">
+            <Grid container justifyContent="space-between" className="conditions-container">
                 <Typography variant="overline" style={{color:'#fff'}}>© COPYRIGHT 2021 DATATANGENTE</Typography>
                 <div>
                     <Typography variant="body2" className="menu--item footer" style={{marginRight:'1rem', display:'inline-block'}}><Link href="#">Condiciones de uso</Link></Typography>
