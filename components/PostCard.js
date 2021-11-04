@@ -44,17 +44,23 @@ export default function Card({posts}) {
     // ]
     // marginLeft:(index === 0 && '5rem'), marginRight:(index === content.length - 1 && '5rem')
     // position:'relative', background: `url(${bgImg}) no-repeat`, backgroundSize: 'cover'
+    let contentTag = [];
     let cardSize;
     if(posts.length > 0 && posts.length < 3) {
         cardSize = 4;
     }else if(posts.length > 2) {
         cardSize = 2;
     }
+    useEffect(() => {
+        if(contentTag.length > 0) {
+            contentTag.forEach(item => {
+                item.innerHTML = item.textContent.trim();
+            });
+        }
+    }, [contentTag]);
     return(
         <Grid container className="post-cards-container-wrapper">
             {posts.length > 0 && posts.map((post, index) => {
-                const image = post.post_img && post.post_img.url;
-                const plainTextHtml = post.content.replace(/<[^>]+>/g, '');
                 return(
                     <Grid item container sm={12} md={6} lg={cardSize} key={post.id+"_"+index} className="card-post-expand-container">
                         <a href={`/posts/${post.slug}`} className="card-post-container">
@@ -67,7 +73,7 @@ export default function Card({posts}) {
                                             variant="subtitle1"
                                             style={{color:'#fff', fontWeight:600}}
                                         >
-                                            {dateFormat(post.published_at)}
+                                            {dateFormat(post.date)}
                                         </Typography>
                                     </Grid>
                                     <Grid container alignItems="center">
@@ -76,27 +82,30 @@ export default function Card({posts}) {
                                                 variant="h4"
                                                 style={{fontStyle:'italic', color:'#ffbf64', fontWeight:600}}
                                             >
-                                                {post.title}
+                                                {post.title.rendered}
                                             </Typography>
-                                            <Typography 
-                                                    variant="body1" 
-                                                    className="card-post-body"
-                                                    style={{
-                                                        marginTop:10, color:'#fff', fontWeight:400, 
-                                                        overflow: 'hidden', 
-                                                        width:'100%',
-                                                        height: 120,
-                                                        textOverflow:'ellipsis',
-                                                    }}
-                                                >
-                                                    {plainTextHtml}
-                                                </Typography>
-                                                <Typography 
-                                                    variant="body1"
-                                                    style={{color:'#fff', fontWeight:400, }}
-                                                >
-                                                    [...]
-                                                </Typography>
+                                            <div
+                                                ref={ref=>contentTag[index] = ref}
+                                                className="card-post-body"
+                                                style={{
+                                                    marginTop:10, color:'#fff', fontWeight:400, 
+                                                    overflow: 'hidden', 
+                                                    width:'100%',
+                                                    height: 120,
+                                                    textOverflow:'ellipsis',
+                                                }}
+                                                dangerouslySetInnerHTML={{__html: post.content.rendered}}
+                                            ></div>
+                                            {/* <Typography 
+                                                variant="body1"
+                                                style={{color:'#fff', fontWeight:400, }}
+                                            >
+                                                {
+                                                    contentTag[index].innerHTML.length > 150 &&
+                                                    `[...]`
+                                                }
+                                                
+                                            </Typography> */}
                                         </Grid>
                                     </Grid>
                                 </Grid>

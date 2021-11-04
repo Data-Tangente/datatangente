@@ -6,10 +6,10 @@ import WorkedDivision from  './../components/WorkedDivision';
 import PostCard from  './../components/PostCard';
 import SubsDivision from  './../components/SubscribeDivision';
 // import Projects from  './../components/Projects';
-import imagesLoaded from 'imagesloaded';
-import marked from 'marked'
-import createDOMPurify from 'dompurify'
-import { JSDOM } from 'jsdom'
+// import imagesLoaded from 'imagesloaded';
+// import marked from 'marked'
+// import createDOMPurify from 'dompurify'
+// import { JSDOM } from 'jsdom'
 
 export default function Home({posts}) {
 	return(
@@ -49,16 +49,20 @@ export default function Home({posts}) {
 
 export async function getStaticProps() {
 
-    const allPosts = await fetch(`https://datatangente.herokuapp.com/posts`);
+    // const allPosts = await fetch(`https://datatangente.herokuapp.com/posts`);
+    // const allPosts = await fetch(`http://localhost:1337/posts`);
+    const allPosts = await fetch(`${process.env.host}/wp-json/wp/v2/posts?_embed`);
     const allPostsData = await allPosts.json();
-    const host = process.env.HOST;
+    // const window = new JSDOM('').window;
+    // const DOMPurify = createDOMPurify(window);
 
-    const window = new JSDOM('').window;
-    const DOMPurify = createDOMPurify(window);
-
+    // allPostsData.forEach(item => {
+    //     item.content = DOMPurify.sanitize(marked(item.content));
+    // })
     allPostsData.forEach(item => {
-        item.content = DOMPurify.sanitize(marked(item.content));
-    })
+        const bannerImg = item._embedded['wp:featuredmedia'];
+        item.banner_img = bannerImg ? bannerImg[0].source_url : '';
+    });
 
 	return {
         props: {posts: allPostsData.splice(0, 3) }
