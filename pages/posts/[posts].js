@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import Typography from '@bit/mui-org.material-ui.typography';
-import Grid from '@bit/mui-org.material-ui.grid';
+import React, { useEffect } from 'react';
+import {Typography, Grid } from '@material-ui/core';
 import Tags from '../../components/Tags';
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";

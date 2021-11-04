@@ -1,13 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@bit/mui-org.material-ui.styles';
-import Typography from '@bit/mui-org.material-ui.typography';
-import Grid from '@bit/mui-org.material-ui.grid';
+import React, { useEffect } from 'react';
+import {Typography, Grid} from '@material-ui/core';
 import { dateFormat } from '../functions/generalMethods';
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
-// import marked from 'marked'
-// import createDOMPurify from 'dompurify'
-// import { JSDOM } from 'jsdom'
 
 export default function Card({posts}) {
     // const content = [

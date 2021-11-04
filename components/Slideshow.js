@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@bit/mui-org.material-ui.styles';
-import Typography from '@bit/mui-org.material-ui.typography';
-import Grid from '@bit/mui-org.material-ui.grid';
-import Glide, { Controls, Swipe } from '@glidejs/glide';
+import React, { useEffect } from 'react';
+import { Grid,} from '@material-ui/core';
+import Glide from '@glidejs/glide';
 import { BackIcon, NextIcon, NavCircleIcon } from './SvgIcons';
 import lottie from 'lottie-web';
 

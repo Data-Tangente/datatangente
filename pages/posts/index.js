@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Typography from '@bit/mui-org.material-ui.typography';
-import Grid from '@bit/mui-org.material-ui.grid';
-import Dialog from '@bit/mui-org.material-ui.dialog';
-import DialogActions from '@bit/mui-org.material-ui.dialog-actions';
-import DialogContent from '@bit/mui-org.material-ui.dialog-content';
-import DialogContentText from '@bit/mui-org.material-ui.dialog-content-text';
-import DialogTitle from '@bit/mui-org.material-ui.dialog-title';
+import {Typography, Grid, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@material-ui/core';
 import { PaginationNav } from '../../components/NavPagination';
 import Tags from '../../components/Tags';
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";

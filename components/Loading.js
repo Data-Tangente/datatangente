@@ -1,5 +1,5 @@
 import CircularProgress from '@bit/mui-org.material-ui.circular-progress';
-import { makeStyles } from '@bit/mui-org.material-ui.styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStylesFacebook = makeStyles((theme) => ({
     root: {

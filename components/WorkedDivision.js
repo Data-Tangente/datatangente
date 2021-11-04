@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@bit/mui-org.material-ui.styles';
-import Typography from '@bit/mui-org.material-ui.typography';
-import Grid from '@bit/mui-org.material-ui.grid';
+import {Grid, } from '@material-ui/core';
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight, faCircle } from "@fortawesome/free-solid-svg-icons";
-import Glide, { Controls, Swipe } from '@glidejs/glide';
-import { BackIcon, NextIcon, NavCircleIcon } from './SvgIcons';
+import Glide from '@glidejs/glide';
 
 function WorkedDivision(props) {
 

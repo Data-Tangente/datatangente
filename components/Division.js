@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@bit/mui-org.material-ui.styles';
-import Typography from '@bit/mui-org.material-ui.typography';
-import Grid from '@bit/mui-org.material-ui.grid';
+import React from 'react';
+import {Typography, Grid} from '@material-ui/core';
 
 function Division(props) {
     return(
