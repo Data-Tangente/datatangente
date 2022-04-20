@@ -57,7 +57,7 @@ function Contact() {
         if(validateForm()) {
             return;
         }
-        const templateId = 'template_ivtlaly';
+        const templateId = 'template_iv7nt41';
         const info = {
             from_name: formInfo.name,
             message: formInfo.msg,
