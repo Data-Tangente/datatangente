@@ -159,7 +159,7 @@ function SubsDivision(props) {
                     <SimpleDialog 
                         open={true}
                         title="¡Éxito!"
-                        response="Se ha subscrito correctamente."
+                        response="Se ha suscrito correctamente."
                         setDialog={setDialog}
                         toggleDialog={toggleDialog}
                     />
@@ -169,7 +169,7 @@ function SubsDivision(props) {
                     <SimpleDialog 
                         open={true}
                         title="Oops..."
-                        response="La subscripción no pudo ser completada correctamente, favor intentar nuevamente."
+                        response="La suscripción no pudo ser completada correctamente, favor intentar nuevamente."
                         setDialog={setDialog}
                         toggleDialog={toggleDialog}
                     />
