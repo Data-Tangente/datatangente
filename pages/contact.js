@@ -62,7 +62,7 @@ function Contact() {
             from_name: formInfo.name,
             message: formInfo.msg,
             from_email: formInfo.email,
-            from_org: (formInfo.org && `De la empresa: ${formInfo.org}`) || '',
+            from_org: (formInfo.org || '---'),
         }
         sendFeedback(templateId, info);
     }

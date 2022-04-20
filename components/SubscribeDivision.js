@@ -57,7 +57,7 @@ function SubsDivision(props) {
         const info = {
             from_name: formInfo.name,
             from_email: formInfo.email,
-            from_org: (formInfo.org && `De la empresa: ${formInfo.org}`) || '',
+            from_org: (formInfo.org || '---'),
         }
         sendFeedback(templateId, info);
     }
