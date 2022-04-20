@@ -53,7 +53,7 @@ function SubsDivision(props) {
         if(validateForm()) {
             return;
         }
-        const templateId = 'template_dllgj5x';
+        const templateId = 'template_ivtlaly';
         const info = {
             from_name: formInfo.name,
             from_email: formInfo.email,
@@ -64,7 +64,7 @@ function SubsDivision(props) {
 
     const sendFeedback = (template, vars) => {
         setLoading(true);
-        emailjs.send('service_8cbo1uj', template, vars, 'user_2aK50W4XYh7luaX6YBTxJ')
+        emailjs.send('service_fncue1a', template, vars, 'ON2z6ecngBZ9QoCwL')
         .then(() => {
             toggleDialog('success');
             setFormInfo({...defaultVal});
