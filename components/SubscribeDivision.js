@@ -82,98 +82,100 @@ function SubsDivision(props) {
     return(
         <Grid 
             container
-            className="subscribe-division-container"
+            className="subscribe-division-wrap"
         >
-            <Typography
-                variant="h4"
-                className="subscribe-title-text"
-            >
-                <span style={{fontWeight:700}}>SUSCRÍBETE&nbsp;</span>
-                <span style={{fontWeight:300}}>A NUESTRO BOLETÍN</span>
-            </Typography>
-            <Typography
-                variant="subtitle1"
-                style={{color:'#fff', width:'100%'}}
-                className="subscribe-title-text-body"
-            >
-                <span>
-                    Mantente al tanto de las últimas noticias.
-                </span>
-            </Typography>
-            <Grid container className="subscribe-input-form">
-                {/* <input className="input-subscribe" placeholder="Nombre" />
-                <input className="input-subscribe" placeholder="Email" />
-                <input className="input-subscribe" placeholder="Empresa" /> */}
+            <div className="container max-width--">
+                <Typography
+                    variant="h4"
+                    className="subscribe-title-text"
+                >
+                    <span style={{fontWeight:700}}>SUSCRÍBETE&nbsp;</span>
+                    <span style={{fontWeight:300}}>A NUESTRO BOLETÍN</span>
+                </Typography>
+                <Typography
+                    variant="subtitle1"
+                    style={{color:'#fff', width:'100%'}}
+                    className="subscribe-title-text-body"
+                >
+                    <span>
+                        Mantente al tanto de las últimas noticias.
+                    </span>
+                </Typography>
+                <Grid container className="subscribe-input-form">
+                    {/* <input className="input-subscribe" placeholder="Nombre" />
+                    <input className="input-subscribe" placeholder="Email" />
+                    <input className="input-subscribe" placeholder="Empresa" /> */}
 
-                <div className="contact-input-container" >
-                    <input 
-                        name="name" 
-                        type="text" required 
-                        className={"input-subscribe "+(errorList.name && 'error' || '')} 
-                        placeholder="Nombre (*)" 
-                        onChange={handleChangeInput.bind(this, 'name')} 
-                        value={formInfo.name}
-                    />
-                    <span className={"error-msg-subs "+(errorList.name && 'show' || '')}>ESTE CAMPO ES REQUERIDO</span>
-                </div>
-                <div className="contact-input-container">
-                    <input
-                        type="email"
-                        name="email"
-                        required 
-                        className={"input-subscribe "+(errorList.email && 'error' || '')}
-                        placeholder="Email (*)" 
-                        onChange={handleChangeInput.bind(this, 'email')}
-                        value={formInfo.email}
-                    />
-                    <span className={"error-msg-subs "+(errorList.email && 'show' || '')}>INTRODUZCA UN EMAIL VÁLIDO. Ej: correo@dominio.com</span>
-                </div>
-                <div className="contact-input-container">
-                    <input 
-                        type="text" 
-                        className={"input-subscribe"} 
-                        placeholder="Empresa" 
-                        name="organization" 
-                        onChange={handleChangeInput.bind(this, 'org')}
-                        value={formInfo.org}
-                    />
-                </div>
-
-                {/* <div className="button-subscribe">
-                    <span>Suscribirme</span>
-                </div> */}
-
-                {
-                    loading ?
-                        <div className="button-subscribe-loading" style={{display:'flex', justifyContent:'center'}}>
-                            <CircularProgressLoading />
-                        </div>
-                    :
-                    <div className="button-subscribe" onClick={handleSubmitForm}>
-                        <span>Suscribirme</span>
+                    <div className="contact-input-container" >
+                        <input 
+                            name="name" 
+                            type="text" required 
+                            className={"input-subscribe "+(errorList.name && 'error' || '')} 
+                            placeholder="Nombre (*)" 
+                            onChange={handleChangeInput.bind(this, 'name')} 
+                            value={formInfo.name}
+                        />
+                        <span className={"error-msg-subs "+(errorList.name && 'show' || '')}>ESTE CAMPO ES REQUERIDO</span>
                     </div>
+                    <div className="contact-input-container">
+                        <input
+                            type="email"
+                            name="email"
+                            required 
+                            className={"input-subscribe "+(errorList.email && 'error' || '')}
+                            placeholder="Email (*)" 
+                            onChange={handleChangeInput.bind(this, 'email')}
+                            value={formInfo.email}
+                        />
+                        <span className={"error-msg-subs "+(errorList.email && 'show' || '')}>INTRODUZCA UN EMAIL VÁLIDO. Ej: correo@dominio.com</span>
+                    </div>
+                    <div className="contact-input-container">
+                        <input 
+                            type="text" 
+                            className={"input-subscribe"} 
+                            placeholder="Empresa" 
+                            name="organization" 
+                            onChange={handleChangeInput.bind(this, 'org')}
+                            value={formInfo.org}
+                        />
+                    </div>
+
+                    {/* <div className="button-subscribe">
+                        <span>Suscribirme</span>
+                    </div> */}
+
+                    {
+                        loading ?
+                            <div className="button-subscribe-loading" style={{display:'flex', justifyContent:'center'}}>
+                                <CircularProgressLoading />
+                            </div>
+                        :
+                        <div className="button-subscribe" onClick={handleSubmitForm}>
+                            <span>Suscribirme</span>
+                        </div>
+                    }
+                </Grid>
+                {
+                    dialog === 'success' && 
+                        <SimpleDialog 
+                            open={true}
+                            title="¡Éxito!"
+                            response="Se ha suscrito correctamente."
+                            setDialog={setDialog}
+                            toggleDialog={toggleDialog}
+                        />
                 }
-            </Grid>
-            {
-                dialog === 'success' && 
-                    <SimpleDialog 
-                        open={true}
-                        title="¡Éxito!"
-                        response="Se ha suscrito correctamente."
-                        setDialog={setDialog}
-                        toggleDialog={toggleDialog}
-                    />
-            }
-            {
-                dialog === 'failure' && 
-                    <SimpleDialog 
-                        open={true}
-                        title="Oops..."
-                        response="La suscripción no pudo ser completada correctamente, favor intentar nuevamente."
-                        setDialog={setDialog}
-                        toggleDialog={toggleDialog}
-                    />
-            }
+                {
+                    dialog === 'failure' && 
+                        <SimpleDialog 
+                            open={true}
+                            title="Oops..."
+                            response="La suscripción no pudo ser completada correctamente, favor intentar nuevamente."
+                            setDialog={setDialog}
+                            toggleDialog={toggleDialog}
+                        />
+                }
+            </div>
         </Grid>
     );
 }

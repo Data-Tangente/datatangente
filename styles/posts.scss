@@ -21,7 +21,8 @@
 }
 
 .posts-page-banner div {
-  margin-left: 10%;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .tags {
@@ -134,7 +135,8 @@
 
 .nav-header-container {
   width: 100%;
-  padding: 0 11%;
+  // padding: 0 11%;
+  margin: 0 auto;
 }
 
 .page-nav {
@@ -173,6 +175,12 @@
   font-size: 20px;
   color: #878787;
   font-weight: 600;
+}
+
+.post-cards-container-wrapper.posts-page {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 10rem 0 !important;
 }
 
 .card-post-container > div .all-posts-card-title {

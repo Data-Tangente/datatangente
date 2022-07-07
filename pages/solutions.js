@@ -41,9 +41,9 @@ function Solutions(props) {
         },
     ]
     return(
-        <Grid className="solutions-container" container style={{width:'100%'}}>
+        <Grid className="solutions-container" style={{width:'100%'}}>
             <div className="solutions-title">
-                <Grid className="solutions-title-text-container" container item>
+                <Grid className="solutions-title-text-container">
                     <Typography  
                         variant="h3"
                         className="solutions-title-text"
@@ -71,9 +71,9 @@ function Solutions(props) {
                     return(
                         <Parallax key={title+"_"+index} bgImage={bgImg} bgImageAlt="solutions-division-bg-image" strength={400} style={{width:'100%', borderBottom: index !== content.length - 1 && '4px solid #fff'}}>
                             <div style={{position:'absolute', width:'100%', height:'100%', zIndex:10, backgroundColor:'rgb(0, 0, 0, .75)'}}></div>
-                            <Grid id={"solution-section-"+(type)} className="solutions-content" container style={type == 'icon-4' && {padding:'5rem 0'} || {}}>
+                            <Grid id={"solution-section-"+(type)} className="solutions-content" style={type == 'icon-4' && {padding:'5rem 0'} || {}}>
                                 <img alt="solutions-icon" className={"solutions-icon" + " " + type} src={icon} />
-                                <Grid className={"solutions-text-container"} container item direction="column" style={type == 'icon-4' && {width:'100%'} || {}}>
+                                <Grid className="solutions-text-container max-width--" style={type == 'icon-4' && {width:'100%'} || {}}>
                                     <Typography
                                         variant="h4"
                                         className="solutions-section-title"
@@ -105,7 +105,7 @@ function Solutions(props) {
                                 </Grid>
                                 {
                                     type === 'icon-1' &&
-                                    <Grid container className="solutions-analysis-stack" direction="row" justifyContent="space-between" style={{padding:'5rem 0'}}>
+                                    <Grid container className="solutions-analysis-stack" direction="row" justifyContent="space-between">
                                         <div>
                                             <Typography  
                                                 variant="h6"
@@ -150,7 +150,7 @@ function Solutions(props) {
 
                                 {
                                     type === 'icon-2' &&
-                                    <div className="techs-container" style={{width:'100%', margin:'0 auto', marginTop:'4rem'}}>
+                                    <div className="techs-container max-width--" style={{width:'100%', margin:'0 auto', marginTop:'4rem'}}>
                                         <Typography  
                                             variant="h6"
                                             style={{color:'#ffbf64', fontSize:28, fontWeight:700, textAlign:'center'}}

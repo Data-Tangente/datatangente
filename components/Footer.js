@@ -8,11 +8,15 @@ import { faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 function Footer(props) {
     return(
         <Grid
-            container direction="column"
+            container
+            direction="column"
             alignItems="center"
             className="footer-container-wrapper"
         >
-            <Grid item container className="footer-container">
+            {/* <div className="max-width--">
+        
+            </div> */}
+            <Grid item container className="footer-container max-width--">
                 <div className="container--logo"></div>
                 <div className="social-icon-wrap" style={{width:'10rem'}}>
                     <span className="social-icon-container">
@@ -58,8 +62,8 @@ function Footer(props) {
                     </div>
                 </div> */}
             </Grid>
-            <Grid container justifyContent="space-between" className="conditions-container">
-                <Typography variant="overline" style={{color:'#fff'}}>© COPYRIGHT 2021 DATATANGENTE</Typography>
+            <Grid container justifyContent="space-between" className="conditions-container max-width--">
+                <Typography variant="overline" style={{color:'#fff'}}>© COPYRIGHT 2022 DATATANGENTE</Typography>
                 <div>
                     <Typography variant="body2" className="menu--item footer" style={{marginRight:'1rem', display:'inline-block'}}><Link href="#">Condiciones de uso</Link></Typography>
                     <Typography variant="body2" className="menu--item footer" style={{display:'inline-block'}}><Link href="#">Privacidad</Link></Typography>

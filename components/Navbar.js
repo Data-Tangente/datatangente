@@ -81,71 +81,70 @@ function Navbar(props) {
         })
     })
     return(
-        <Grid ref={ref => navRef = ref} container className="navbar-container" style={{top:0, position: 'sticky', zIndex: 1000, backgroundColor: '#fff'}}>
-        {/* <Grid container className="navbar-container" style={{border:'1px solid black'}}> */}
-            <a href="/">
-                {/* <div className="container--logo" style={{marginTop: '1rem'}}></div> */}
-                <img className="container--logo" src="/assets/logo.png" />
-            </a>
-            <ul className="menu">
-                <Typography variant="h5" className="menu--item"><Link href="/">Inicio</Link></Typography>
-                <Typography variant="h5" className="menu--item"><Link href="/about">Nosotros</Link></Typography>
-                <Typography variant="h5" className="menu--item dropdown">
-                    <Link href="/solutions" className="menu--item-link dropdown-btn">Soluciones</Link>
-                        <div className="dropdown-container" style={{width: '30rem'}}>
-                            <div className="dropdown-content-wrap">
-                                <DropdownItem 
-                                    iconSrc="/assets/icon1.png"
-                                    title="ANÁLISIS DE DATA"
-                                    body="Soluciones y plataformas acorde a las necesidades de nuestros clientes."
-                                    href="/solutions/#solution-section-icon-1"
-                                />
-                                <DropdownItem
-                                    iconSrc="/assets/icon2.png"
-                                    title="DESARROLLO DE SOFTWARE"
-                                    body="Plataformas y programas personalizadas para nuestros clientes."
-                                    href="/solutions/#solution-section-icon-2"
-                                />
-                                {/* <DropdownItem 
-                                    iconSrc="/assets/icon1.png"
-                                    title="SISTEMAS DE FACTURACIÓN E INVENTARIO"
-                                    body="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
-                                        sed diam nonummy nibh euismod tincidunt."
-                                /> */}
-                                <DropdownItem
-                                    iconSrc="/assets/icon3.png"
-                                    title="LÍNEA DE PROCESO"
-                                    body="Visualice nuestra línea de proceso"
-                                    href="/solutions/#solution-section-icon-4"
-                                />
+        <Grid ref={ref => navRef = ref} container className="navbar-wrap" style={{top:0, position: 'sticky', zIndex: 1000, backgroundColor: '#fff'}}>
+            <div className="navbar-content max-width--">
+                <a href="/">
+                    <img className="container--logo" src="/assets/logo.png" />
+                </a>
+                <ul className="menu">
+                    <Typography variant="h5" className="menu--item"><Link href="/">Inicio</Link></Typography>
+                    <Typography variant="h5" className="menu--item"><Link href="/about">Nosotros</Link></Typography>
+                    <Typography variant="h5" className="menu--item dropdown">
+                        <Link href="/solutions" className="menu--item-link dropdown-btn">Soluciones</Link>
+                            <div className="dropdown-container" style={{width: '30rem'}}>
+                                <div className="dropdown-content-wrap">
+                                    <DropdownItem 
+                                        iconSrc="/assets/icon1.png"
+                                        title="ANÁLISIS DE DATA"
+                                        body="Soluciones y plataformas acorde a las necesidades de nuestros clientes."
+                                        href="/solutions/#solution-section-icon-1"
+                                    />
+                                    <DropdownItem
+                                        iconSrc="/assets/icon2.png"
+                                        title="DESARROLLO DE SOFTWARE"
+                                        body="Plataformas y programas personalizadas para nuestros clientes."
+                                        href="/solutions/#solution-section-icon-2"
+                                    />
+                                    {/* <DropdownItem 
+                                        iconSrc="/assets/icon1.png"
+                                        title="SISTEMAS DE FACTURACIÓN E INVENTARIO"
+                                        body="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+                                            sed diam nonummy nibh euismod tincidunt."
+                                    /> */}
+                                    <DropdownItem
+                                        iconSrc="/assets/icon3.png"
+                                        title="LÍNEA DE PROCESO"
+                                        body="Visualice nuestra línea de proceso"
+                                        href="/solutions/#solution-section-icon-4"
+                                    />
+                                </div>
                             </div>
-                        </div>
-                </Typography>
-                <Typography variant="h5" className="menu--item dropdown">
-                    <Link href="/posts"  className="menu--item-link dropdown-btn">Publicaciones</Link>
-                </Typography>
-                {/* <Typography variant="h5" className="menu--item"><Link href="/projects">Proyectos</Link></Typography> */}
-                {/* <Typography variant="h5" className="menu--item"><Link href="#">Proyectos</Link></Typography> */}
-                <Typography variant="h5" className="menu--item"><Link href="/contact">Contactos</Link></Typography>
-            </ul>
-
-            <div className="side-menu-button" onClick={handleSideNavbar}>
-                {
-                    openNavButton ? <Icon icon={faTimes}/> : <Icon icon={faBars}/>
-                }
-            </div>
-            <div className="side-menu-container" ref={btn=>{navBtn = btn}}>
-                <ul className="side-menu">
-                    <Link href="/"><Typography onClick={handleSideNavbar} variant="h5" className="menu--item side-menu-list--item">Inicio</Typography></Link>
-                    <Link href="/about"><Typography onClick={handleSideNavbar} variant="h5" className="menu--item side-menu-list--item">Nosotros</Typography></Link>
-                    <Link href="/solutions"><Typography onClick={handleSideNavbar} variant="h5" className="menu--item side-menu-list--item">Soluciones</Typography></Link>
-                    <Link href="/posts"><Typography onClick={handleSideNavbar} variant="h5" className="menu--item side-menu-list--item">Publicaciones</Typography></Link>
-                    {/* <Typography variant="h5" className="menu--item side-menu-list--item"><Link href="/projects">Proyectos</Link></Typography> */}
-                    {/* <Link href="#"><Typography variant="h5" className="menu--item side-menu-list--item">Proyectos</Typography></Link> */}
-                    <Link href="/contact"><Typography onClick={handleSideNavbar} variant="h5" className="menu--item side-menu-list--item">Contactos</Typography></Link>
+                    </Typography>
+                    {/* <Typography variant="h5" className="menu--item"><Link href="/graphics">Gráficos</Link></Typography> */}
+                    <Typography variant="h5" className="menu--item dropdown">
+                        <Link href="/posts"  className="menu--item-link dropdown-btn">Publicaciones</Link>
+                    </Typography>
+                    {/* <Typography variant="h5" className="menu--item"><Link href="/projects">Proyectos</Link></Typography> */}
+                    {/* <Typography variant="h5" className="menu--item"><Link href="#">Proyectos</Link></Typography> */}
+                    <Typography variant="h5" className="menu--item"><Link href="/contact">Contactos</Link></Typography>
                 </ul>
-            </div>
 
+                <div className="side-menu-button" onClick={handleSideNavbar}>
+                    {
+                        openNavButton ? <Icon icon={faTimes}/> : <Icon icon={faBars}/>
+                    }
+                </div>
+                <div className="side-menu-container" ref={btn=>{navBtn = btn}}>
+                    <ul className="side-menu">
+                        <Link href="/"><Typography onClick={handleSideNavbar} variant="h5" className="menu--item side-menu-list--item">Inicio</Typography></Link>
+                        <Link href="/about"><Typography onClick={handleSideNavbar} variant="h5" className="menu--item side-menu-list--item">Nosotros</Typography></Link>
+                        <Link href="/solutions"><Typography onClick={handleSideNavbar} variant="h5" className="menu--item side-menu-list--item">Soluciones</Typography></Link>
+                        {/* <Link href="/graphics"><Typography onClick={handleSideNavbar} variant="h5" className="menu--item side-menu-list--item">Gráficos</Typography></Link> */}
+                        <Link href="/posts"><Typography onClick={handleSideNavbar} variant="h5" className="menu--item side-menu-list--item">Publicaciones</Typography></Link>
+                        <Link href="/contact"><Typography onClick={handleSideNavbar} variant="h5" className="menu--item side-menu-list--item">Contactos</Typography></Link>
+                    </ul>
+                </div>
+            </div>
         </Grid>
     );
 }
