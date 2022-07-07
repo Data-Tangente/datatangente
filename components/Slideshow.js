@@ -62,7 +62,8 @@ function Slideshow(props) {
 
 
     return(
-        <Grid container style={{display:'inline-block', maxWidth:'100%', margin: '0 auto', padding: '0 10%'}}>
+        // <Grid container style={{display:'inline-block', maxWidth:'100%', margin: '0 auto', padding: '0 10%'}}>
+        <Grid container className="banner-slideshow-container max-width--">
             <div className="glide" style={{width:'100%', position: 'relative'}}>
                 <div data-glide-el="track" className="glide__track">
                     <ul className="glide__slides">

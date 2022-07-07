@@ -99,7 +99,7 @@ function Contact() {
                         </Typography>
                     </Grid>
 
-                    <Grid container className="contact-info-container">
+                    <Grid container className="contact-info-container max-width--">
                         <div className="address-container">
                             <div className="address">
                                 C/ mercedes echenique #9 Edificio Rivera del sur, Santo Domingo Mirador sur
@@ -123,7 +123,7 @@ function Contact() {
                         </div>
                     </Grid>
 
-                    <Grid container className="message-container">
+                    <Grid container className="message-container max-width--">
                         <form className="message-form-container">
                             <Typography  
                                 variant="h6"

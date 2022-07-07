@@ -179,7 +179,7 @@ export default function PostsPage({ posts, tags, host }) {
     return(
         <div style={{backgroundColor: '#fafafa'}}>
             <div className="posts-page-banner">
-                <div>
+                <div className="max-width--">
                     <Typography  
                         variant="h3"
                         style={{color:'#fff', fontWeight:600, letterSpacing:3}}
@@ -190,7 +190,7 @@ export default function PostsPage({ posts, tags, host }) {
                     </Typography>
                 </div>
             </div>
-            <Grid container direction="row" alignItems="center" justifyContent="space-between" className="nav-header-container">
+            <Grid container direction="row" alignItems="center" justifyContent="space-between" className="nav-header-container max-width--">
                 <div style={{display:'flex', flexDirection:'row', alignItems:'center'}} className="nav-filter">
                     <FilterBtn 
                         toggleDialog={handleToggleDialog}
@@ -215,7 +215,7 @@ export default function PostsPage({ posts, tags, host }) {
                     class="nav-pagination"
                 />
             </Grid>
-            <Grid container className="post-cards-container-wrapper posts-page" style={{paddingBottom: '10rem'}}>
+            <Grid container className="post-cards-container-wrapper posts-page max-width--" style={{paddingBottom: '10rem'}}>
                 {(pagination && Object.keys(pagination).length > 0)  && pagination[currentPage].map((post, index) => {
                     return(
                         <Grid item container sm={12} md={6} lg={6} key={post.title.rendered+"_"+index} className="page-card-post-expand-container">

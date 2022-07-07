@@ -4,7 +4,7 @@ function AboutUs() {
     return(
         <Grid className="about-container" container style={{width:'100%'}}>
             <div className="about-title">
-                <Grid className="about-title-text-container" container item>
+                <Grid className="about-title-text-container">
                     <Typography  
                         variant="h2"
                         className="about-title-text"
@@ -13,7 +13,7 @@ function AboutUs() {
                     </Typography>
                 </Grid>
             </div>
-            <div className="about-body-container">
+            <div className="about-body-container max-width--">
                 <Typography  
                     variant="subtitle1"
                     style={{marginTop:'2rem', color:'#424242', fontWeight: 700, textAlign:'center', fontSize:'1.6rem'}}

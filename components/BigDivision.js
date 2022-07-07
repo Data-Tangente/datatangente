@@ -53,8 +53,8 @@ function BigDivision(props) {
                     <Parallax key={title+"_"+index} bgImage={bgImg} bgImageAlt="solutions-division-bg-image" strength={400} style={{width:'100%', borderBottom: index !== content.length - 1 && '4px solid #fff'}}>
                     {/* <div className="big-division-section"  key={title+"_"+index} style={{position:'relative', background: `url(${bgImg}) no-repeat`, backgroundSize: '100%', width:'100%', borderBottom:'4px solid #fff'}}> */}
                         <div style={{position:'absolute', width:'100%', height:'100%', zIndex:10, backgroundColor:'rgb(0, 0, 0, .75)'}}></div>
-                        <Grid className="big-division-content" container direction={direction}>
-                            <img alt="solutions-icon" className={"solutions-icon" + " " + type} src={icon} />
+                        <Grid className="big-division-content max-width--" container direction={direction}>
+                            <img alt="solutions-icon" className={`solutions-icon ${type} ${alignText}`} src={icon} />
                             <Grid className="big-division-text-container" container item direction="column" style={{padding:'0 3rem', textAlign:alignText}}>
                                 <Typography  
                                     variant="h4"
