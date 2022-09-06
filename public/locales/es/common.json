@@ -1,0 +1,125 @@
+{
+  "notFound": "404 - Nada que ver aquí...",
+  "home": {
+    "divisions": {
+      "solutions": "SOLUCIONES",
+      "needs": "ACORDE A TUS NECESIDADES",
+      "trusted": "HAN CONFIADO",
+      "work": "EN NUESTRO TRABAJO",
+      "posts": "PUBLICACIONES",
+      "recent": "RECIENTES"
+    },
+    "solutions": {
+      "analysis": "ANÁLISIS DE DATOS",
+      "development": "DESARROLLO DE SOFTWARE",
+      "process": "LÍNEA DE PROCESO"
+    },
+    "subscribe": {
+      "subscribe": "SUSCRÍBETE",
+      "news": "A NUESTRO BOLETÍN",
+      "keepUp": "Mantente al tanto de las últimas noticias."
+    },
+    "fields": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "org": "Empresa",
+      "position": "Cargo en la empresa",
+      "phone": "Número telefónico",
+      "hearAbout": "¿Cómo escuchaste de nosotros?",
+      "msg": "¿Cómo podemos ayudarte?",
+      "placeholderWrite": "Escriba su respuesta...",
+      "placeholderOrg": "Ej: MINERD",
+      "placeholderPositon": "Ej: Reclutador",
+      "placeholderName": "Ej: María Perez Sánchez",
+      "placeholderEmail": "Ej: mi_correo@dominio.com"
+    },
+    "buttons": {
+      "subscribe": "Suscribirme"
+    }
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Nostros",
+    "solutions": "Soluciones",
+    "statistics": "Estadísticas",
+    "posts": "Publicaciones",
+    "contact": "Contacto",
+    "analysisBody": "Soluciones y plataformas acorde a las necesidades de nuestros clientes",
+    "softwareBody": "Visualice nuestra línea de proceso",
+    "processBody": "Plataformas y programas personalizadas para nuestros clientes"
+  },
+  "footer": {
+    "address": "C/Mercedes echenique #9 Edificio Rivera del sur, Santo Domingo Mirador sur",
+    "we": "Nostros",
+    "aboutUs": "Sobre Nosotros",
+    "mission": "Misión",
+    "vision": "Visión",
+    "values": "valores",
+    "home": "Inicio",
+    "suscribe": "Suscribirse al boletín",
+    "solutions": "Soluciones",
+    "analysis": "Análisis de dato",
+    "development": "Desarrollo de software",
+    "process": "Línea de proceso",
+    "posts": "Publicaciones",
+    "terms": "Condiciones de uso",
+    "privacy": "Privacidad"
+  },
+  "aboutUs": {
+    "title": "¡CONÓCENOS UN POCO MÁS!",
+    "dt1": "es una empresa de servicios tecnológicos y análisis de la información, cuyo principal objetivo es ayudar a sus socios y clientes a alcanzar sus objetivos propuestos.",
+    "dt2": "Compuesto por un equipo de economistas, matemáticos y programadores con mas de 5 años de experiencia, tratamos de que nuestros clientes sean cada vez mas productivos a través de sus procesos y el análisis de la información desde el punto de vista correcto.",
+    "mission": "MISIÓN",
+    "missionDesc": "Proporcionar soluciones escalables e innovadoras, con la finalidad de eficientizar procesos y mejorar la toma de decisiones.",
+    "vision": "VISIÓN",
+    "visionDesc": "Acompanar a nuestros clientes a alcanzar sus objetivos, mejorando sus procesos y calidad de la informacion. Ser un referente en el analisis de la informacion y nuevas tecnologia."
+  },
+  "solutions": {
+    "title": "SERVICIOS Y PRODUCTOS ACORDE A TUS NECESIDADES",
+    "title2": "SERVICIOS Y PRODUCTOS",
+    "subTitle": "Mejores procesos, mejores decisiones. Productos hechos a la medida para nuestros clientes.",
+    "analysis": "ANÁLISIS DE DATA",
+    "analysisQuote": "\"LO QUE SE MIDE, SE CONTROLA\"",
+    "analysisBody": "Implementamos soluciones y plataformas las cuales ayudan a nuestros clientes a analizar de manera mas detallada su informacion, aumentando la calidad en la toma de decisiones.",
+    "dataAnlysis": "Análisis de datos",
+    "certified": "Estamos certificados en:",
+    "dataBase": "Base de datos",
+    "workWith": "Trabajamos con:",
+    "softwareDev": "DESARROLLO DE SOFTWARE",
+    "softwareQuote": "\"EN LA ERA EN LA QUE VIVIMOS, LAS EMPRESAS QUE NO SE ADAPTEN ESTÁN DESTINADAS AL FRACASO\"",
+    "softwareBody": "Creamos plataformas y programas personalizadas para nuestros clientes con el fin de eficientizar procesos y reducir costos.",
+    "techs": "Tecnologías",
+    "processLine": "NUESTRA LÍNEA DE PROCESO"
+  },
+  "posts": {
+    "title": "DE TU INTERÉS, ACTUALIZADO",
+    "filter": "FILTRO",
+    "of": "de",
+    "accept": "ACEPTAR",
+    "reset": "REINICIAR",
+    "filterSelect": "Selecciona las publicaciones que quieres ver"
+  },
+  "contact": {
+    "title": "CONTÁCTENOS",
+    "messageTitle": "DÉJENOS UN MENSAJE",
+    "fieldNameTitle": "Nombre completo",
+    "fieldNamePlaceholder": "Ej: Juan Pérez Sánchez",
+    "fieldEmailTitle": "Correo electrónico",
+    "fieldEmailPlaceholder": "Ej: mi_correo_001@dominio.com",
+    "fieldOrgTitle": "Nombre de la compañía",
+    "fieldOrgPlaceholder": "Ej: MINERD",
+    "fieldOrgPositonTitle": "Cargo en la compañía",
+    "fieldOrgPositonPlaceholder": "Ej: Encargado de Negociación",
+    "fieldPhoneNumberTitle": "Número telefónico",
+    "fieldNamePlacehPlaceholder": "Ej: 809-000-0000",
+    "fieldHearOfUsTitle": "¿Cómo escuchaste de nosotros?",
+    "fieldHearOfUsPlaceholder": "Escriba su respuesta...",
+    "fieldMsgTitle": "¿Cómo podemos ayudarte?",
+    "fieldMsgPlaceholder": "Escriba su respuesta...",
+    "sendMsg": "Enviar Mensaje",
+    "success": "¡Éxito!",
+    "successBody": "Su mensaje ha sido enviado correctamente.",
+    "error": "Oops...",
+    "errorBody": "No se pudo enviar correctamente el mensaje, favor intentar nuevamente."
+  }
+}
