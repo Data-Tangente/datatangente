@@ -118,10 +118,10 @@ function Navbar(props) {
         setOpenNavButton(!openNavButton);
     }
     const handleScroll = (e) => {
-        if(e.currentTarget.pageYOffset > 0 && (navRef && !navRef.classList.contains("scrolled")) ) {
-            navRef.classList.add("scrolled");
-        }else if(e.currentTarget.pageYOffset === 0 && (navRef && navRef.classList.contains("scrolled")) ){
-            navRef.classList.remove("scrolled");
+        if(e.currentTarget.pageYOffset > 0 && (navRef && !navRef.classList.contains("shadow")) ) {
+            navRef.classList.add("shadow");
+        }else if(e.currentTarget.pageYOffset === 0 && (navRef && navRef.classList.contains("shadow")) ){
+            navRef.classList.remove("shadow");
         }
     }
     const handleResize = (e) => {
@@ -172,7 +172,7 @@ function Navbar(props) {
             openNavButton && 
             <div className='side-menu-overlay' style={{zIndex:999, width:'100%', height:'100%', position:'absolute', backgroundColor:'rgba(0, 0, 0, 0.8)'}} />
         }
-        <Grid ref={ref => navRef = ref} container className="navbar-wrap" style={{top:0, position: 'sticky', zIndex: 1000, backgroundColor: '#fff'}}>
+        <Grid ref={ref => navRef = ref} container className="navbar-wrap scrolled" style={{top:0, position: 'sticky', zIndex: 1000, backgroundColor: '#fff'}}>
             <div className="navbar-content max-width--">
                 <a href="/">
                     <img className="container--logo" src="/assets/logo.png" />

@@ -42,7 +42,7 @@ function Footer(props) {
                 
                 <div className="footer-address">
                     <span className="address-icon-container"><Icon icon={faMapMarkerAlt} /></span>
-                    <Typography variant="subtitle1" style={{color:'#fff'}}>
+                    <Typography variant="h6" style={{color:'#fff'}}>
                         <span>
                             {t('footer.address')}
                         </span>

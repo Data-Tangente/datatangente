@@ -115,7 +115,7 @@ p {
 .main {
   max-width: 100%;
   margin: 0 auto;
-  position: relative;
+  // position: relative;
 }
 
 // NAVBAR
@@ -191,11 +191,11 @@ a:visited {
 //   width: 12rem;
 //   height: 8rem;
 // }
-.navbar-wrap .navbar-content .container--logo {
-  max-width: 12rem;
-  transition: all 0.08s linear;
-}
-.navbar-wrap.scrolled {
+// .navbar-wrap .navbar-content .container--logo {
+//   max-width: 12rem;
+//   transition: all 0.08s linear;
+// }
+.navbar-wrap.shadow {
   border-bottom: 1px solid #ededed;
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
 
@@ -630,7 +630,6 @@ a:visited {
   display: flex;
   align-items: center;
   flex-direction: column;
-  position: absolute;
 }
 
 .footer-container {
