@@ -118,7 +118,7 @@ function Contact() {
                                 {t('footer.address')}
                             </div>
                             <div className="phone-number">
-                                829-876-1754
+                                {"+1(829)-891-1171"}
                             </div>
                         </div>
 
