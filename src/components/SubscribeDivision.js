@@ -186,7 +186,7 @@ function SubsDivision(props) {
                             </div>
                         :
                         <div className="button-subscribe" onClick={handleSubmitForm}>
-                            <span>Suscribirme</span>
+                            <span>{t('home.buttons.subscribe')}</span>
                         </div>
                     }
                 </Grid>
