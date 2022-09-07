@@ -36,7 +36,7 @@ function Footer(props) {
                 <div className="footer-number">
                     <span className="phone-icon-container"><Icon icon={faPhoneAlt} /></span>
                     <Typography variant="h6" style={{letterSpacing:5, color:'#fff'}}>
-                        829-876-1754
+                        {"+1(829)-891-1171"}
                     </Typography>
                 </div>
                 
