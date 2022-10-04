@@ -10,34 +10,29 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import '@glidejs/glide/dist/css/glide.core.min.css';
 import '@glidejs/glide/dist/css/glide.theme.min.css';
 import { config } from "@fortawesome/fontawesome-svg-core";
-// import '../i18n';
+import '../i18n';
+// import { appWithTranslation, useTranslation } from 'next-i18next';
 import { appWithTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+// import { useEffect } from 'react';
 config.autoAddCss = false;
 
-const MyApp = ({ Component, pageProps }) =>
-    <Layout>
-        <Head>
-            <title>Data Tangente</title>
-            <meta  name="viewport" content="initial-scale=1.0, width=device-width" />
-            <meta charSet="UTF-8" />
-            <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
-            <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png" />
-            <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png" />
-            <link rel="manifest" href="/assets/favicons/site.webmanifest" />
-            <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#5bbad5" />
-            <meta name="msapplication-TileColor" content="#da532c" />
-            <meta name="theme-color" content="#ffffff" />
-        </Head>
-        <Component {...pageProps} />
-    </Layout>
-
-export default appWithTranslation(MyApp);
-
-export async function getStaticProps({locale}) {
-	return {
-        props: {
-            ...(await serverSideTranslations(locale, ['common'])),
-        }
-    }
+function MyApp({ Component, pageProps }){
+    return(
+        <Layout>
+            <Head>
+                <title>Data Tangente</title>
+                <meta  name="viewport" content="initial-scale=1.0, width=device-width" />
+                <meta charSet="UTF-8" />
+                <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
+                <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png" />
+                <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png" />
+                <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+                <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#5bbad5" />
+                <meta name="msapplication-TileColor" content="#da532c" />
+                <meta name="theme-color" content="#ffffff" />
+            </Head>
+            <Component {...pageProps} />
+        </Layout>
+    )
 }
+export default appWithTranslation(MyApp);
