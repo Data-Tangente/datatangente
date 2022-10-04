@@ -149,7 +149,6 @@ export default function PostDetailPage({post, posts}) {
 }
 
 export async function getStaticPaths({ locales }) {
-
     const data = await getStaticData(locales);
     return data;
 }
