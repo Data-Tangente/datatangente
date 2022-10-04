@@ -12,6 +12,7 @@ import '@glidejs/glide/dist/css/glide.theme.min.css';
 import { config } from "@fortawesome/fontawesome-svg-core";
 // import '../i18n';
 import { appWithTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 config.autoAddCss = false;
 
 const MyApp = ({ Component, pageProps }) =>
@@ -30,5 +31,13 @@ const MyApp = ({ Component, pageProps }) =>
         </Head>
         <Component {...pageProps} />
     </Layout>
-// export default MyApp;
+
 export default appWithTranslation(MyApp);
+
+export async function getStaticProps({locale}) {
+	return {
+        props: {
+            ...(await serverSideTranslations(locale, ['common'])),
+        }
+    }
+}
