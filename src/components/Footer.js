@@ -4,10 +4,13 @@ import Link from 'next/link';
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
+import { useRouter } from 'next/router';
+import { tempNavTranslation } from '../functions/generalMethods';
 
 function Footer(props) {
-    const { t } = useTranslation();
+    // const { t } = useTranslation();
+    const route = useRouter();
     return(
         <Grid
             container
@@ -44,15 +47,31 @@ function Footer(props) {
                     <span className="address-icon-container"><Icon icon={faMapMarkerAlt} /></span>
                     <Typography variant="h6" style={{color:'#fff'}}>
                         <span>
-                            {t('footer.address')}
+                            {/* {t('footer.address')} */}
+                            {tempNavTranslation(route.locale, 'address')}
                         </span>
                     </Typography>
                 </div>
                 <div className="menu-footer">
                     <ul>
-                        <Typography variant="h6" className="menu--item footer"><Link href="/contact">{t('footer.aboutUs')}</Link></Typography>
-                        <Typography variant="h6" className="menu--item footer"><Link href="/solutions">{t('footer.solutions')}</Link></Typography>
-                        <Typography variant="h6" className="menu--item footer"><Link href="/posts">{t('footer.posts')}</Link></Typography>
+                        <Typography variant="h6" className="menu--item footer">
+                            <Link href="/contact">
+                                {/* {t('footer.aboutUs')} */}
+                                {tempNavTranslation(route.locale, 'aboutUs')}
+                            </Link>
+                        </Typography>
+                        <Typography variant="h6" className="menu--item footer">
+                            <Link href="/solutions">
+                                {/* {t('footer.solutions')} */}
+                                {tempNavTranslation(route.locale, 'solutions')}
+                            </Link>
+                        </Typography>
+                        <Typography variant="h6" className="menu--item footer">
+                            <Link href="/posts">
+                                {/* {t('footer.posts')} */}
+                                {tempNavTranslation(route.locale, 'posts')}
+                            </Link>
+                        </Typography>
                     </ul>
                 </div>
                 {/* <div className="footer-subscribe">
@@ -65,8 +84,18 @@ function Footer(props) {
             <Grid container justifyContent="space-between" className="conditions-container max-width--">
                 <Typography variant="overline" style={{color:'#fff'}}>© COPYRIGHT 2021-2022 DATATANGENTE</Typography>
                 <div>
-                    <Typography variant="body2" className="menu--item footer" style={{marginRight:'1rem', display:'inline-block'}}><Link href="#">{t('footer.terms')}</Link></Typography>
-                    <Typography variant="body2" className="menu--item footer" style={{display:'inline-block'}}><Link href="#">{t('footer.privacy')}</Link></Typography>
+                    <Typography variant="body2" className="menu--item footer" style={{marginRight:'1rem', display:'inline-block'}}>
+                        <Link href="#">
+                            {/* {t('footer.terms')} */}
+                            {tempNavTranslation(route.locale, 'terms')}
+                        </Link>
+                    </Typography>
+                    <Typography variant="body2" className="menu--item footer" style={{display:'inline-block'}}>
+                        <Link href="#">
+                            {/* {t('footer.privacy')} */}
+                            {tempNavTranslation(route.locale, 'privacy')}
+                        </Link>
+                    </Typography>
                 </div>
             </Grid>
         </Grid>
