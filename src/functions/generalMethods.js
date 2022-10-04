@@ -223,3 +223,66 @@ export const getStaticData = async (locales) => {
     // paths: [],
   };
 }
+
+export const tempNavTranslation = (locale, value) => {
+  const data = {
+    // change to "namespace" in case properties collide.
+      es: {
+          "home": "Inicio",
+          "about": "Nostros",
+          "solutions": "Soluciones",
+          "statistics": "Estadísticas",
+          "posts": "Publicaciones",
+          "contact": "Contacto",
+          "analysisBody": "Soluciones y plataformas acorde a las necesidades de nuestros clientes",
+          "softwareBody": "Visualice nuestra línea de proceso",
+          "processBody": "Plataformas y programas personalizadas para nuestros clientes",
+          "analysis": "ANÁLISIS DE DATA",
+          "softwareDev": "DESARROLLO DE SOFTWARE",
+          "processLine": "NUESTRA LÍNEA DE PROCESO",
+          "address": "C/ Arístides García Mella 23-27, Santo Domingo",
+          "we": "Nostros",
+          "aboutUs": "Sobre Nosotros",
+          "mission": "Misión",
+          "vision": "Visión",
+          "values": "valores",
+          "home": "Inicio",
+          "suscribe": "Suscribirse al boletín",
+          "solutions": "Soluciones",
+          "analysis": "Análisis de dato",
+          "development": "Desarrollo de software",
+          "process": "Línea de proceso",
+          "terms": "Condiciones de uso",
+          "privacy": "Privacidad"
+      },
+      en: {
+          "home": "Home",
+          "about": "About Us",
+          "solutions": "Solutions",
+          "statistics": "Statistics",
+          "posts": "Posts",
+          "contact": "Contact",
+          "analysisBody": "Solutions and platforms according to your needs",
+          "softwareBody": "Check out our process line",
+          "processBody": "Custom platforms and softwares",
+          "analysis": "DATA ANALYSIS",
+          "softwareDev": "SOFTWARE DEVELOPMENT",
+          "processLine": "OUR PROCESS LINE",
+          "address": "Arístides García Mella Street, #23-27, Santo Domingo",
+          "we": "Us",
+          "aboutUs": "About us",
+          "mission": "Mission",
+          "vision": "Vision",
+          "values": "Values",
+          "home": "Home",
+          "suscribe": "Subscribe to the newsletter",
+          "solutions": "Solutions",
+          "analysis": "Data analysis",
+          "development": "Software Development",
+          "process": "Process line",
+          "terms": "Terms of use",
+          "privacy": "Privacy"
+      }
+  }
+  return data[locale][value];
+}
