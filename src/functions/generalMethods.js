@@ -229,7 +229,7 @@ export const tempNavTranslation = (locale, value) => {
     // change to "namespace" in case properties collide.
       es: {
           "home": "Inicio",
-          "about": "Nostros",
+          "about": "Nosotros",
           "solutions": "Soluciones",
           "statistics": "Estadísticas",
           "posts": "Publicaciones",
@@ -241,7 +241,7 @@ export const tempNavTranslation = (locale, value) => {
           "softwareDev": "DESARROLLO DE SOFTWARE",
           "processLine": "NUESTRA LÍNEA DE PROCESO",
           "address": "C/ Arístides García Mella 23-27, Santo Domingo",
-          "we": "Nostros",
+          "we": "Nosotros",
           "aboutUs": "Sobre Nosotros",
           "mission": "Misión",
           "vision": "Visión",
