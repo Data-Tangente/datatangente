@@ -17,7 +17,7 @@
     "subscribe": {
       "subscribe": "SUBSCRIBE",
       "news": "TO OUR NEWS LETTER",
-      "keepUp": "Stay updated with the latest"
+      "keepUp": "Stay updated with the latest."
     },
     "fields": {
       "name": "Name",
@@ -45,9 +45,9 @@
     "statistics": "Statistics",
     "posts": "Posts",
     "contact": "Contact",
-    "analysisBody": "Solutions and platforms according to your needs",
-    "softwareBody": "Check out our process line",
-    "processBody": "Custom platforms and softwares"
+    "analysisBody": "Solutions and platforms according to your needs.",
+    "softwareBody": "Check out our process line.",
+    "processBody": "Custom platforms and softwares."
   },
   "footer": {
     "address": "Arístides García Mella Street, #23-27, Santo Domingo",
@@ -81,7 +81,7 @@
     "subTitle": "Better processes, better decisions. Products made to fit our clients.",
     "analysis": "DATA ANALYSIS",
     "analysisQuote": "\"WHAT IS MEASURED, CAN BE MANAGED\"",
-    "analysisBody": "We implement solutions and platforms which help our clients to analyze their information in more detail, increasing the quality of decision making",
+    "analysisBody": "We implement solutions and platforms which help our clients to analyze their information in more detail, increasing the quality of decision making.",
     "dataAnlysis": "Data Analysis",
     "certified": "We are certified in:",
     "dataBase": "Database",
