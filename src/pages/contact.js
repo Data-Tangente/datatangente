@@ -1,6 +1,6 @@
 import React, { useState, } from 'react';
-import {Typography, Grid } from '@material-ui/core';
-import SubsDivision from  '../components/SubscribeDivision';
+import { Typography, Grid } from '@material-ui/core';
+import SubsDivision from '../components/SubscribeDivision';
 import CircularProgressLoading from '../components/Loading';
 import SimpleDialog from '../components/SimpleDialog';
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
@@ -9,6 +9,7 @@ import emailjs from 'emailjs-com';
 import { TextField, NumericField, TextAreaField } from '../components/Fields';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import BookingDivision from '../components/BookingDivision';
 
 
 function Contact() {
@@ -29,13 +30,13 @@ function Contact() {
     const [errorList, setErrorList] = useState({});
     const required = ['name', 'email', 'msg'];
     const emailRegx = // email reg expression
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     const handleChangeInput = (event, val) => {
         const name = event?.target?.name || val?.event?.target?.name;
         const value = event?.target?.value || val?.event?.target?.value;
-        setErrorList({...errorList, [name]: false});
-        setFormInfo({...formInfo, [name]: value});
+        setErrorList({ ...errorList, [name]: false });
+        setFormInfo({ ...formInfo, [name]: value });
     }
 
     const validateForm = () => {
@@ -43,7 +44,7 @@ function Contact() {
         let hasError = false;
         required.forEach(item => {
             let currentErr = false;
-            switch(item) {
+            switch (item) {
                 case 'email':
                     currentErr = !Boolean(emailRegx.test(String(formInfo[item]).toLocaleLowerCase()));
                     break;
@@ -53,17 +54,17 @@ function Contact() {
 
             }
             errors[item] = currentErr;
-            if(!hasError && currentErr) {
+            if (!hasError && currentErr) {
                 hasError = currentErr;
             }
         });
         setError(hasError);
-        setErrorList({...errors});
+        setErrorList({ ...errors });
         return hasError;
     }
 
     const handleSubmitForm = () => {
-        if(validateForm()) {
+        if (validateForm()) {
             return;
         }
         const templateId = 'template_iv7nt41';
@@ -82,26 +83,26 @@ function Contact() {
     const sendFeedback = (template, vars) => {
         setLoading(true);
         emailjs.send('service_fncue1a', template, vars, 'ON2z6ecngBZ9QoCwL')
-        .then(() => {
-            toggleDialog('success');
-            setFormInfo({...defaultVal});
-            setLoading(false);
-        }).catch(() => {
-            toggleDialog('failure');
-            setLoading(false);
-        });
+            .then(() => {
+                toggleDialog('success');
+                setFormInfo({ ...defaultVal });
+                setLoading(false);
+            }).catch(() => {
+                toggleDialog('failure');
+                setLoading(false);
+            });
     }
 
     const toggleDialog = (dialog) => {
         setDialog(dialog);
     }
 
-    return(
+    return (
         <>
-            <Grid className="contact-container" container style={{width:'100%'}}>
+            <Grid className="contact-container" container style={{ width: '100%' }}>
                 <div className="contact-title">
                     <Grid className="contact-title-text-container" container item>
-                        <Typography  
+                        <Typography
                             variant="h3"
                             className="contact-title-text"
                         >
@@ -125,7 +126,7 @@ function Contact() {
                         <div className="social-media-container">
                             <span className="social-icon-container">
                                 <a href="https://www.instagram.com/datatangente/" target="_blank">
-                                    <Icon icon={faInstagram}/>
+                                    <Icon icon={faInstagram} />
                                 </a>
                             </span>
                             <span className="social-icon-container">
@@ -139,7 +140,7 @@ function Contact() {
                     {/* <Grid container className="message-container max-width--"> */}
                     <Grid container className="message-container">
                         <form className="message-form-container">
-                            <Typography  
+                            <Typography
                                 variant="h6"
                                 className="message-title-text"
                             >
@@ -180,14 +181,14 @@ function Contact() {
                                     errorClass={`error-msg ${errorList.org ? 'show' : ''}`}
                                 />
                             </div> */}
-                            <TextField 
-                                name="name" 
+                            <TextField
+                                name="name"
                                 type="text"
                                 required
                                 label={t('contact.fieldNameTitle') + "(*)"}
                                 placeholder={t('contact.fieldNamePlaceholder')}
                                 inputClass={`input-subscribe ${errorList.name ? 'error' : ''}`}
-                                onChange={handleChangeInput} 
+                                onChange={handleChangeInput}
                                 value={formInfo.name}
                                 errorClass={`error-msg ${errorList.name ? 'show' : ''}`}
                             />
@@ -280,49 +281,50 @@ function Contact() {
                             /> */}
                             {
                                 loading ?
-                                <div className="send-message-btn-container">
-                                    <div className="button-subscribe-loading" style={{display:'flex', justifyContent:'center'}}>
-                                        <CircularProgressLoading />
+                                    <div className="send-message-btn-container">
+                                        <div className="button-subscribe-loading" style={{ display: 'flex', justifyContent: 'center' }}>
+                                            <CircularProgressLoading />
+                                        </div>
                                     </div>
-                                </div>
-                                :
-                                <div className="send-message-btn-container" onClick={handleSubmitForm}>
-                                    <label className="button-subscribe" htmlFor="submit-form">
-                                        <span>{t('contact.sendMsg')}</span>
-                                    </label>
-                                </div>
+                                    :
+                                    <div className="send-message-btn-container" onClick={handleSubmitForm}>
+                                        <label className="button-subscribe" htmlFor="submit-form">
+                                            <span>{t('contact.sendMsg')}</span>
+                                        </label>
+                                    </div>
                             }
                         </form>
                     </Grid>
                 </div>
             </Grid>
             {
-                dialog === 'success' && 
-                    <SimpleDialog 
-                        open={true}
-                        title={t('contact.success')}
-                        response={t('contact.successBody')}
-                        setDialog={setDialog}
-                        toggleDialog={toggleDialog}
-                    />
+                dialog === 'success' &&
+                <SimpleDialog
+                    open={true}
+                    title={t('contact.success')}
+                    response={t('contact.successBody')}
+                    setDialog={setDialog}
+                    toggleDialog={toggleDialog}
+                />
             }
             {
-                dialog === 'failure' && 
-                    <SimpleDialog 
-                        open={true}
-                        title={t('contact.error')}
-                        response={t('contact.errorBody')}
-                        setDialog={setDialog}
-                        toggleDialog={toggleDialog}
-                    />
+                dialog === 'failure' &&
+                <SimpleDialog
+                    open={true}
+                    title={t('contact.error')}
+                    response={t('contact.errorBody')}
+                    setDialog={setDialog}
+                    toggleDialog={toggleDialog}
+                />
             }
+            <BookingDivision />
             <SubsDivision />
         </>
     );
 }
 
-export async function getStaticProps({locale}) {
-	return {
+export async function getStaticProps({ locale }) {
+    return {
         props: {
             ...(await serverSideTranslations(locale, ['common'])),
         }

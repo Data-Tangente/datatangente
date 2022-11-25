@@ -19,6 +19,10 @@
       "news": "TO OUR NEWS LETTER",
       "keepUp": "Stay updated with the latest."
     },
+    "booking": {
+      "book": "Book",
+      "appointment": "an appointment with us!"
+    },
     "fields": {
       "name": "Name",
       "email": "Email",
