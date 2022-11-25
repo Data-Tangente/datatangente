@@ -19,6 +19,10 @@
       "news": "A NUESTRO BOLETÍN",
       "keepUp": "Mantente al tanto de las últimas noticias."
     },
+    "booking": {
+      "book": "¡Agenda",
+      "appointment": "una cita con nosotros!"
+    },
     "fields": {
       "name": "Nombre",
       "email": "Correo electrónico",
