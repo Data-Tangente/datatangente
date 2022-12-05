@@ -21,7 +21,8 @@
     },
     "booking": {
       "book": "Book",
-      "appointment": "an appointment with us!"
+      "appointment": "an appointment with us!",
+      "book-appt": "Book appointment"
     },
     "fields": {
       "name": "Name",

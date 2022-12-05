@@ -638,30 +638,48 @@ a:visited {
 
 // BOOKING
 
-.button-container {
+.booking-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
   padding: 5em;
   text-align: center;
-  color: #f05638;
 }
 
-.button-booking {
-  border: none;
-  background: transparent;
+.booking-title {
   font-size: 2rem;
   text-align: center;
   letter-spacing: 8px;
   font-weight: 100;
   text-transform: uppercase;
   font-style: italic;
+  color: #f05638;
+  margin-right: 2em;
 }
 
-.button-booking_bold {
+.booking_bold {
   font-weight: 800;
 }
 
-.button-booking:hover {
-  border-bottom: 1px solid;
+.booking-button {
+  color: #fff;
+  border-radius: 10px;
+  background-color: #f46f43;
+  border: none;
+  padding: 10px 30px;
+  line-height: 2.2rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1.5px 5px hsla(0%, 0%, 0%, .2);
+}
+
+.booking-button:hover {
+  cursor: pointer;
+  background-color: #f05638;
 }
 
 // FOOTER
