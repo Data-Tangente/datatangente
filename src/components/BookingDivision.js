@@ -5,8 +5,18 @@ import { Grid } from '@material-ui/core'
 function BookingDivision() {
     const { t } = useTranslation();
     return (
-        <div className="button-container max-width--">
-            <a target="_blank" className="button-booking" href='https://outlook.office365.com/owa/calendar/DataTangente2@datatangente.com/bookings/s/tmq1G2DB4U-lfVUJFQ5QDw2'><span className="button-booking_bold">{t('home.booking.book')}</span> {t('home.booking.appointment')}</a>
+        <div className="booking-container max-width--">
+            <h1 className="booking-title">
+                <span className="booking_bold">{t('home.booking.book')} </span>
+                {t('home.booking.appointment')}
+            </h1>
+            <div
+                target="_blank"
+                href='https://outlook.office365.com/owa/calendar/DataTangente2@datatangente.com/bookings/s/tmq1G2DB4U-lfVUJFQ5QDw2'
+                className="booking-button"
+            >
+                {t('home.booking.book-appt')}
+            </div>
         </div>
     )
 }

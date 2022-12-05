@@ -21,7 +21,8 @@
     },
     "booking": {
       "book": "¡Agenda",
-      "appointment": "una cita con nosotros!"
+      "appointment": "una cita con nosotros!",
+      "book-appt": "Agendar cita"
     },
     "fields": {
       "name": "Nombre",
