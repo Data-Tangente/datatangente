@@ -11,8 +11,12 @@ function BookingDivision() {
                 {t('home.booking.appointment')}
             </h1>
             <div
-                target="_blank"
-                href='https://outlook.office365.com/owa/calendar/DataTangente2@datatangente.com/bookings/s/tmq1G2DB4U-lfVUJFQ5QDw2'
+                onClick={() => {
+                    window.open(
+                        "https://outlook.office365.com/owa/calendar/DataTangente2@datatangente.com/bookings/s/tmq1G2DB4U-lfVUJFQ5QDw2",
+                        "_blank"
+                    )
+                }}
                 className="booking-button"
             >
                 {t('home.booking.book-appt')}
