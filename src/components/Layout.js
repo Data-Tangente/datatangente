@@ -23,11 +23,13 @@ const Layout = ({children}) => {
             });
         });
         return () => {
-            router.events.off("routeChangeComplete", () => {
-                //nothing to look here
-            });
+            router.events.off("routeChangeComplete");
         }
     }, [router.events]);
+    
+    useEffect(() => {
+        console.log('this page re-renderd');
+    });
     return(
         <div className="main">
             {
