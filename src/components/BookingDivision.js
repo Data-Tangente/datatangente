@@ -11,12 +11,8 @@ function BookingDivision() {
                 {t('home.booking.appointment')}
             </h1>
             <div
-                onClick={() => {
-                    window.open(
-                        "https://outlook.office365.com/owa/calendar/DataTangente2@datatangente.com/bookings/s/tmq1G2DB4U-lfVUJFQ5QDw2",
-                        "_blank"
-                    )
-                }}
+                target="_blank"
+                href='https://jeandeleon-datatangente.zohobookings.com/#/customer/datatangente'
                 className="booking-button"
             >
                 {t('home.booking.book-appt')}
