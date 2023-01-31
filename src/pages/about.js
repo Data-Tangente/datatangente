@@ -1,9 +1,14 @@
+import React, {useEffect} from 'react';
 import {Typography, Grid } from '@material-ui/core';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 function AboutUs() {
     const { t, i18n } = useTranslation();
+    useEffect(() => {
+      console.log('re-rendered')
+    });
+    
     return(
         <Grid className="about-container" container style={{width:'100%'}}>
             <div className="about-title">
