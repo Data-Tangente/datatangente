@@ -46,6 +46,19 @@
   width: 100% !important;
   height: auto !important;
 }
+.heateor_sss_sharing_ul > a {
+
+  margin: 2rem 2rem 0 0;
+}
+
+.heateor_sss_sharing_ul > a span {
+  border-radius: 5px;
+}
+
+.heateor_sss_button_instagram > span {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);;
+}
+
 
 @media screen and (max-width: 1280px) {
   .post-content-wrapper {
