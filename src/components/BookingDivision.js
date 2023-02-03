@@ -10,13 +10,13 @@ function BookingDivision() {
                 <span className="booking_bold">{t('home.booking.book')} </span>
                 {t('home.booking.appointment')}
             </h1>
-            <div
+            <a
                 target="_blank"
                 href='https://jeandeleon-datatangente.zohobookings.com/#/customer/datatangente'
                 className="booking-button"
             >
                 {t('home.booking.book-appt')}
-            </div>
+            </a>
         </div>
     )
 }
