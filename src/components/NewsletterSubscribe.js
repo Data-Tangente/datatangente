@@ -2,35 +2,62 @@ import { useState, useEffect } from "react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import { decode } from "html-entities";
 import { useTranslation } from "react-i18next";
-
-const url =
-  "https://datatangente.us21.list-manage.com/subscribe/post?u=f09b1088871b5172f97c0f563&amp;id=2b966ad276";
+import SimpleDialog from "./SimpleDialog";
 
 // simplest form (only email)
+
 const NewsletterForm = ({ status, message, onValidated }) => {
   const { t } = useTranslation();
 
   const [error, setError] = useState(null);
   const [email, setEmail] = useState("");
+  const [dialog, setDialog] = useState({
+    state: "",
+    title: "",
+    response: "",
+  });
 
+  useEffect(() => {
+    if (status === "success") {
+      toggleDialog("success", "Thank you for subscribing!");
+      setEmail("");
+    }
+  }, [status]);
   /**
    * Handle form submit.
    *
    * @return {{value}|*|boolean|null}
    */
+
+  const toggleDialog = (dialog, bodyText) => {
+    let dialogData = {
+      state: dialog,
+      response: bodyText,
+    };
+    switch (dialog) {
+      case "success":
+        dialogData.title = "Success";
+        break;
+      case "error":
+        dialogData.title = "Error";
+        break;
+      default:
+        break;
+    }
+    setDialog({ ...dialogData });
+  };
   const handleFormSubmit = () => {
     setError(null);
 
-    if (!email) {
-      setError("Please enter a valid email address");
+    const emailRegx = // email reg expression
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const formattedEmail = String(email).toLocaleLowerCase();
+    const isEmailValid = !Boolean(emailRegx.test(formattedEmail));
+    if (isEmailValid) {
+      toggleDialog("error", "Please enter a valid email address");
       return null;
     }
-    if (status === "success") {
-      setEmail("");
-    }
-
     const isFormValidated = onValidated({ EMAIL: email });
-
     // On success return true
     return email && email.indexOf("@") > -1 && isFormValidated;
   };
@@ -81,6 +108,7 @@ const NewsletterForm = ({ status, message, onValidated }) => {
               type="email"
               placeholder={t("contact.fieldEmailTitle") + " (*)"}
               onKeyUp={(event) => handleInputKeyEvent(event)}
+              value={email}
             />
           </div>
           {/* Button */}
@@ -107,6 +135,14 @@ const NewsletterForm = ({ status, message, onValidated }) => {
           )}
         </div>
       </div>
+      {dialog?.state && (
+        <SimpleDialog
+          open={true}
+          title={dialog?.title}
+          response={dialog?.response}
+          toggleDialog={toggleDialog}
+        />
+      )}
     </>
   );
 };
@@ -114,6 +150,7 @@ const NewsletterForm = ({ status, message, onValidated }) => {
 // use the render prop and your custom form
 const NewsletterSubscribe = () => {
   const { t } = useTranslation();
+  const url = process.env.NEXT_PUBLIC_MAILCHIMP;
 
   return (
     <div className="subscribe-division-wrap">
@@ -126,7 +163,6 @@ const NewsletterSubscribe = () => {
       <div style={{ color: "#fff", width: "100%" }}>
         <span>{t("home.subscribe.keepUp")}</span>
       </div>
-
       <MailchimpSubscribe
         url={url}
         render={(props) => {
