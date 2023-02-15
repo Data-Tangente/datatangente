@@ -27,9 +27,6 @@ const Layout = ({children}) => {
         }
     }, [router.events]);
     
-    useEffect(() => {
-        console.log('this page re-renderd');
-    });
     return(
         <div className="main">
             {
