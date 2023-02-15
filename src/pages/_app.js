@@ -10,21 +10,12 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import '@glidejs/glide/dist/css/glide.core.min.css';
 import '@glidejs/glide/dist/css/glide.theme.min.css';
 import { config } from "@fortawesome/fontawesome-svg-core";
-// import '../i18n';
 import { appWithTranslation } from 'next-i18next';
-import { useGeolocation } from 'react-use';
-import { useEffect } from 'react';
+// import '../i18n';
 
 config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }){
-    const state = useGeolocation();
-    useEffect(() => {
-        if(state){
-            const test = JSON.stringify(state, null, 2)
-            console.log(test);
-        }
-    }, [state])
     return(
         <Layout>
             <Head>

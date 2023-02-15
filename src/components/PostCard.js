@@ -27,7 +27,7 @@ export default function Card({posts}) {
                     <Grid item container sm={12} md={6} lg={cardSize} key={post.id+"_"+index} className="card-post-expand-container">
                         <a href={`/posts/${post.slug}`} className="card-post-container">
                             <Grid container item style={{position:'relative', background: `url("/assets/post${(index+1)}.jpg") no-repeat`, backgroundSize: 'cover', width:'100%', height:'100%'}}>
-                                <div style={{position:'absolute', width:'100%', height:'100%', zIndex:10, backgroundColor:'rgb(0, 0, 0, .7)'}}></div>
+                                <div style={{position:'absolute', width:'100%', height:'100%', zIndex:10, backgroundColor:'rgb(0, 0, 0, .7)'}} />
                                 <Grid container style={{position:'relative', zIndex:20, padding:'1rem 2rem'}}>
                                     <Grid container item direction="row" alignItems="center" alignContent="flex-start">
                                         <Icon style={{color:'#fff', marginRight:'1rem'}} icon={faCalendarAlt} />
