@@ -3,6 +3,7 @@ import MailchimpSubscribe from "react-mailchimp-subscribe";
 import { decode } from "html-entities";
 import { useTranslation } from "react-i18next";
 import SimpleDialog from "./SimpleDialog";
+import CircularProgressLoading from "./Loading";
 
 // simplest form (only email)
 
@@ -110,28 +111,22 @@ const NewsletterForm = ({ status, message, onValidated }) => {
               onKeyUp={(event) => handleInputKeyEvent(event)}
               value={email}
             />
-          </div>
-          {/* Button */}
-          <div className="button-subscribe">
-            <span onClick={handleFormSubmit}>
-              {t("home.buttons.subscribe")}
-            </span>
+            {/* Button */}
           </div>
         </div>
-
         <div>
-          {status === "sending" && <div>Sending...</div>}
-          {status === "error" || error ? (
+          {status === "sending" ? (
             <div
-              className="msg-container"
-              dangerouslySetInnerHTML={{ __html: error || getMessage(message) }}
-            />
-          ) : null}
-          {status === "success" && status !== "error" && !error && (
-            <div
-              className="thank-you-msg"
-              dangerouslySetInnerHTML={{ __html: decode(message) }}
-            />
+              className="button-subscribe-loading"
+              style={{ display: "flex", justifyContent: "center" }}>
+              <CircularProgressLoading />
+            </div>
+          ) : (
+            <div className="button-subscribe">
+              <span onClick={handleFormSubmit}>
+                {t("home.buttons.subscribe")}
+              </span>
+            </div>
           )}
         </div>
       </div>
