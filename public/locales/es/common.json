@@ -117,7 +117,7 @@
     "fieldOrgPositonPlaceholder": "Ej: Encargado de Negociación",
     "fieldPhoneNumberTitle": "Número telefónico",
     "fieldNamePlacehPlaceholder": "Ej: 809-000-0000",
-    "fieldHearOfUsTitle": "¿Cómo escuchaste de nosotros?",
+    "fieldHearOfUsTitle": "Solo por curiosidad, ¿cómo escuchaste de nosotros?",
     "fieldHearOfUsPlaceholder": "Escriba su respuesta...",
     "fieldMsgTitle": "¿Cómo podemos ayudarte?",
     "fieldMsgPlaceholder": "Escriba su respuesta...",
@@ -125,6 +125,7 @@
     "success": "¡Éxito!",
     "successBody": "Su mensaje ha sido enviado correctamente.",
     "error": "Oops...",
-    "errorBody": "No se pudo enviar correctamente el mensaje, favor intentar nuevamente."
+    "errorBody": "No se pudo enviar correctamente el mensaje, favor intentar nuevamente.",
+    "messageSent": "¡Gracias por contactarnos! Tu mensaje ha sido enviado."
   }
 }

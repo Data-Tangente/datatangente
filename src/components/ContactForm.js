@@ -1,76 +1,29 @@
+import { Grid, Typography } from "@material-ui/core";
+import { TextField, TextAreaField, NumericField } from "../components/Fields";
+import { useTranslation } from "next-i18next";
 import { useState } from "react";
+import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
+import {
+  faMapMarkerAlt,
+  faPhoneAlt,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function ContactForm() {
+  const { t } = useTranslation();
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
+  const [company, setCompany] = useState("");
+  const [position, setPosition] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [hearOfUs, setHearOfUs] = useState("");
   const [message, setMessage] = useState("");
-  const [errors, setErrors] = useState({});
-  const [buttonText, setButtonText] = useState("Send");
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [showFailureMessage, setShowFailureMessage] = useState(false);
-
-  const handleValidation = () => {
-    let tempErrors = {};
-    let isValid = true;
-
-    if (fullname.length <= 0) {
-      tempErrors["fullname"] = true;
-      isValid = false;
-    }
-    if (email.length <= 0) {
-      tempErrors["email"] = true;
-      isValid = false;
-    }
-    if (subject.length <= 0) {
-      tempErrors["subject"] = true;
-      isValid = false;
-    }
-    if (message.length <= 0) {
-      tempErrors["message"] = true;
-      isValid = false;
-    }
-
-    setErrors({ ...tempErrors });
-    console.log("errors", errors);
-    return isValid;
-  };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   let isValidForm = handleValidation();
-
-  //   if (isValidForm) {
-  //     setButtonText("Sending");
-  //     const res = await fetch("/api/sendgrid", {
-  //       body: JSON.stringify({
-  //         email,
-  //         fullname,
-  //         subject,
-  //         message,
-  //       }),
-  //       // headers: {
-  //       //   "Content-Type": "application/json",
-  //       // },
-  //       method: "POST",
-  //     });
-  //     const { error } = await res.json();
-  //     if (error) {
-  //       // console.log(error);
-  //       setShowSuccessMessage(false);
-  //       setShowFailureMessage(true);
-  //       setButtonText("Send");
-  //       return;
-  //     }
-  //     setShowSuccessMessage(true);
-  //     setShowFailureMessage(false);
-  //     setButtonText("Send");
-  //   }
-  //   console.log(fullname, email, subject, message);
-  // };
+  const [errorList, setErrorList] = useState({});
+  const [messageSent, setMessageSent] = useState(false);
 
   async function handleOnSubmit(e) {
+    setMessageSent(true);
+    clearForm();
     e.preventDefault();
 
     const formData = {};
@@ -87,63 +40,162 @@ export default function ContactForm() {
     console.log(formData);
   }
 
+  function clearForm() {
+    setFullname("");
+    setEmail("");
+    setCompany("");
+    setPosition("");
+    setPhoneNumber("");
+    setHearOfUs("");
+    setMessage("");
+  }
+
   return (
-    <form onSubmit={handleOnSubmit}>
-      <h1>Send a message</h1>
+    <>
+      <Grid className="contact-title">
+        <div className="contact-container">
+          <Typography variant="h4" className="contact-title-text">
+            <span>{t("contact.title")}</span>
+          </Typography>
+          <form onSubmit={handleOnSubmit} className="message-form-container">
+            <Typography variant="h6" className="message-title-text">
+              <span>{t("contact.messageTitle")}</span>
+            </Typography>
 
-      <label htmlFor="fullname">
-        Full name<span>*</span>
-      </label>
-      <input
-        id="fullname"
-        type="text"
-        value={fullname}
-        onChange={(e) => {
-          setFullname(e.target.value);
-        }}
-        name="fullname"
-      />
+            <TextField
+              name="name"
+              type="text"
+              required
+              label={t("contact.fieldNameTitle") + "* :"}
+              placeholder={t("contact.fieldNamePlaceholder")}
+              inputClass={`input-subscribe ${errorList.name ? "error" : ""}`}
+              onChange={(e) => {
+                setFullname(e.target.value);
+              }}
+              value={fullname}
+              errorClass={`error-msg ${errorList.name ? "show" : ""}`}
+            />
 
-      <label htmlFor="email">
-        E-mail<span className="text-red-500">*</span>
-      </label>
-      <input
-        id="email"
-        type="email"
-        name="email"
-        value={email}
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
-      />
+            <TextField
+              type="email"
+              name="email"
+              required
+              label={t("contact.fieldEmailTitle") + "* :"}
+              placeholder={t("contact.fieldEmailPlaceholder")}
+              inputClass={`input-subscribe ${errorList.email ? "error" : ""}`}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+              value={email}
+              errorClass={`error-msg ${errorList.email ? "show" : ""}`}
+              errorText={"INTRODUZCA UN EMAIL VÁLIDO. Ej: correo@dominio.com"}
+            />
 
-      <label htmlFor="subject">
-        Subject<span className="text-red-500">*</span>
-      </label>
-      <input
-        id="subject"
-        type="text"
-        name="subject"
-        value={subject}
-        onChange={(e) => {
-          setSubject(e.target.value);
-        }}
-      />
+            <TextField
+              name="company"
+              type="text"
+              label={t("contact.fieldOrgTitle") + " :"}
+              placeholder={t("contact.fieldOrgPlaceholder")}
+              inputClass={`input-subscribe ${errorList.company ? "error" : ""}`}
+              onChange={(e) => {
+                setCompany(e.target.value);
+              }}
+              value={company}
+              errorClass={`error-msg ${errorList.company ? "show" : ""}`}
+            />
+            <TextField
+              name="position"
+              type="text"
+              label={t("contact.fieldOrgPositonTitle") + " :"}
+              placeholder={t("contact.fieldOrgPositonPlaceholder")}
+              inputClass={`input-subscribe ${errorList.company ? "error" : ""}`}
+              onChange={(e) => {
+                setPosition(e.target.value);
+              }}
+              value={position}
+              errorClass={`error-msg ${errorList.company ? "show" : ""}`}
+            />
+            <TextField
+              name="phoneNumber"
+              type="text"
+              label={t("contact.fieldPhoneNumberTitle") + " :"}
+              placeholder={t("contact.fieldNamePlacehPlaceholder")}
+              inputClass={`input-subscribe ${
+                errorList.phoneNumber ? "error" : ""
+              }`}
+              onChange={(e) => {
+                setPhoneNumber(e.target.value);
+              }}
+              value={phoneNumber}
+              errorClass={`error-msg ${errorList.phoneNumber ? "show" : ""}`}
+            />
+            <TextField
+              name="hearOfUs"
+              type="text"
+              label={t("contact.fieldHearOfUsTitle") + " :"}
+              placeholder={t("contact.fieldHearOfUsPlaceholder")}
+              inputClass={`input-subscribe ${
+                errorList.hearOfUs ? "error" : ""
+              }`}
+              onChange={(e) => {
+                setHearOfUs(e.target.value);
+              }}
+              value={hearOfUs}
+              errorClass={`error-msg ${errorList.hearOfUs ? "show" : ""}`}
+            />
+            <TextAreaField
+              required
+              name="message"
+              type="text"
+              label={t("contact.fieldMsgTitle") + "* :"}
+              placeholder={t("contact.fieldMsgPlaceholder")}
+              inputClass={`input-subscribe message ${
+                errorList.msg ? "error" : ""
+              }`}
+              onChange={(e) => {
+                setMessage(e.target.value);
+              }}
+              value={message}
+              errorClass={`error-msg ${errorList.msg ? "show" : ""}`}
+              row={2}
+            />
+            {messageSent ? (
+              <div className="message-sent">{t("contact.messageSent")}</div>
+            ) : (
+              <div className="contact-button-container">
+                <button type="submit" className="contact-button">
+                  {t("contact.sendMsg")}
+                </button>
+              </div>
+            )}
+          </form>
+        </div>
 
-      <label htmlFor="message">
-        Message<span className="text-red-500">*</span>
-      </label>
-      <textarea
-        id="message"
-        name="message"
-        value={message}
-        onChange={(e) => {
-          setMessage(e.target.value);
-        }}></textarea>
-
-      <div className="flex flex-row items-center justify-start">
-        <button type="submit">Submit</button>
-      </div>
-    </form>
+        <Grid className="contact-info-container">
+          <div className="info-container">
+            <div className="address">
+              <span className="address--icon-container">
+                <Icon icon={faMapMarkerAlt} />
+              </span>
+              {t("footer.address")}
+            </div>
+            <div className="phone-email-container">
+              <div className="phone-number">
+                <span className="phone--icon-container">
+                  <Icon icon={faPhoneAlt} />
+                </span>
+                {"+1(829)-891-1171"}
+              </div>
+              <div className="email">
+                <span className="email--icon-container">
+                  <Icon icon={faEnvelope} />
+                </span>
+                {"info@datatangente.com"}
+              </div>
+            </div>
+          </div>
+        </Grid>
+      </Grid>
+    </>
   );
 }
