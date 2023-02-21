@@ -16,6 +16,7 @@ import {
 // import { useTranslation } from 'react-i18next';
 import { useRouter } from "next/router";
 import { tempNavTranslation } from "../functions/generalMethods";
+import ContactFormFooter from "./ContactFormFooter";
 
 function Footer(props) {
   // const { t } = useTranslation();
@@ -181,6 +182,7 @@ function Footer(props) {
           <Typography variant="h6" className="contact--">
             {tempNavTranslation(route.locale, "contact")}
           </Typography>
+          <ContactFormFooter />
         </div>
       </Grid>
       <Grid
