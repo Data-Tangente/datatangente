@@ -102,7 +102,6 @@ function Contact() {
 
   return (
     <>
-      <ContactForm />
       <Grid className="contact-container" container style={{ width: "100%" }}>
         <div className="contact-title">
           <Grid className="contact-title-text-container" container item>
