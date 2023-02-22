@@ -127,7 +127,7 @@
     "fieldOrgPositonPlaceholder": "eg: Recruiter",
     "fieldPhoneNumberTitle": "Phone number",
     "fieldNamePlacehPlaceholder": "eg: 534-999-9999",
-    "fieldHearOfUsTitle": "How did you hear about us?",
+    "fieldHearOfUsTitle": "Just out of curiosity, how did you hear about us?",
     "fieldHearOfUsPlaceholder": "Type your answer...",
     "fieldMsgTitle": "How can we assist?",
     "fieldMsgPlaceholder": "Type your answer...",
@@ -135,6 +135,7 @@
     "success": "Success!",
     "successBody": "Your message has been sent successfully.",
     "error": "Whoops...",
-    "errorBody": "The message could not be sent correctly, please try again."
+    "errorBody": "The message could not be sent correctly, please try again.",
+    "messageSent": "Thank you for contacting us! Your message has been sent."
   }
 }
