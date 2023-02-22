@@ -37,7 +37,6 @@ export default function ContactForm() {
       method: "POST",
       body: JSON.stringify(formData),
     });
-    console.log(formData);
   }
 
   function clearForm() {
