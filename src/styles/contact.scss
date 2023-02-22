@@ -18,52 +18,42 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  text-align: center;
   margin: 0 auto;
-  padding-bottom: 10rem;
+  padding: 5rem 0 10em;
 }
 
-.contact-title-text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 10rem 10rem;
-  width: 20%;
+.contact-container {
+  width: 50%;
+  margin: 1em auto;
 }
 
-.contact-title-text-container .contact-title-text {
+.contact-container > .contact-title-text {
   color: #fff;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 2px;
-}
-.contact-title-text-container .contact-body-text {
-  width: 60%;
-  margin: 0 auto;
 }
 
 .contact-info-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   // padding: 0 20rem;
+
+  width: 50%;
   margin: 0 auto;
-
-  max-width: 70rem;
-  width: 100%;
-  
 }
 
-.address-container {
-  width: 85%;
-  justify-content: space-between;
-}
+// .info-container {
+//   width: 85%;
+//   justify-content: space-between;
+// }
 
 .social-media-container {
   width: 10%;
   justify-content: center;
 }
 
-.address-container,
+.info-container,
 .social-media-container {
   border: 1px solid #f05638;
   border-radius: 0.5rem;
@@ -75,23 +65,39 @@
   font-size: 1.5rem;
 }
 
-.address-container .address {
+.info-container .address {
   border-right: 1px solid #f05638;
-  width: 60%;
+  width: 40%;
   text-align: left;
-  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  padding: 0 2em;
+}
+
+.phone-email-container {
+  padding: 1em 2em;
+}
+
+.info-container .phone-number,
+.email {
+  display: flex;
+  margin: 0.5em auto;
   font-size: 1.2rem;
 }
 
-.address-container .phone-number {
-  padding: 1rem 2rem;
-  margin: 0 auto;
-  font-size: 1.2rem;
+.address {
+  display: flex;
 }
 
 .address,
-.phone-number {
+.phone-number,
+.email {
   color: #fff;
+}
+
+.address--icon-container,
+.phone--icon-container,
+.email--icon-container {
+  padding-right: 0.5em;
 }
 
 .social-icon-container {
@@ -112,15 +118,13 @@
 .message-form-container {
   border: 1px solid #f05638;
   border-radius: 1rem;
-  // padding: 1rem 2rem;
-  padding: 1rem 10rem;
+  padding: 1rem 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   margin-top: 1rem;
-  width: 100%;
 }
 
 .message-form-container .message-title-text {
@@ -129,7 +133,7 @@
   letter-spacing: 2px;
   width: 100%;
   text-align: left;
-  padding: 1rem 0 2rem 0;
+  padding: 1rem 0;
 }
 
 .message-form-inputs-container {
@@ -200,11 +204,29 @@
   height: auto;
 }
 
-.send-message-btn-container {
+.contact-button-container {
   width: 100%;
   display: flex;
   justify-content: flex-end;
   margin: 2rem 0;
+}
+
+.contact-button {
+  border-radius: 3px;
+  background-color: #f15738;
+  color: #fff;
+  width: 100%;
+  padding: 0.5rem 0;
+  line-height: 2.2rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #f23711;
 }
 
 .send-message-btn-container .button-subscribe {
@@ -220,17 +242,9 @@
   color: #fff;
 }
 
-.button-subscribe-loading {
-  border-radius: 20rem;
-  background-color: transparent;
-  color: #fff;
-  border: 1px solid #fff;
-  width: 12rem;
-  height: 2.5rem;
-  line-height: 2.2rem;
-  text-align: center;
-  font-weight: 500;
-  font-size: 1.2rem;
+.message-sent {
+  margin: 2em 0;
+  font-size: 1.5rem;
 }
 
 @media screen and (max-width: 1700px) {
@@ -257,7 +271,7 @@
 }
 
 @media screen and (max-width: 1130px) {
-  .address-container,
+  .info-container,
   .social-media-container {
     font-size: 1.1rem;
   }
@@ -269,7 +283,6 @@
   }
 }
 @media screen and (max-width: 880px) {
-
   .message-form-container {
     padding: 1rem 4rem;
   }
@@ -277,14 +290,14 @@
     padding: 10rem 5rem;
   }
 
-  .address-container {
+  .info-container {
     width: 73%;
   }
   .social-media-container {
     width: 20%;
   }
-  .address-container .address,
-  .address-container .phone-number {
+  .info-container .address,
+  .info-container .phone-number {
     padding: 1rem 0 1rem 0.5rem;
   }
 }
@@ -299,11 +312,11 @@
   .message-container {
     padding: 0 2rem;
   }
-  .address-container .address,
-  .address-container .phone-number {
+  .info-container .address,
+  .info-container .phone-number {
     padding: 1rem 1rem;
   }
-  .address-container {
+  .info-container {
     width: 100%;
   }
   .social-media-container {
@@ -330,16 +343,16 @@
   .message-container {
     padding: 0 1rem;
   }
-  .address-container {
+  .info-container {
     flex-direction: column;
     text-align: center;
     width: 100%;
   }
-  .address-container .address,
-  .address-container .phone-number {
+  .info-container .address,
+  .info-container .phone-number {
     width: 90%;
   }
-  .address-container .address {
+  .info-container .address {
     border: none;
     border-bottom: 1px solid #f05638;
   }
