@@ -692,7 +692,8 @@ a:visited {
   flex-direction: column;
 }
 
-.footer-container {
+.footer-container,
+.footer-container--contact {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -701,7 +702,8 @@ a:visited {
   border-bottom: 1px solid rgba(255, 255, 255, 0.8);
 }
 
-.footer-container .container--logo {
+.footer-container .container--logo,
+.footer-container-wrapper--contact .container--logo {
   background: url("/assets/logo_white-orange.png") no-repeat;
   background-size: 18rem;
   width: 22rem;
@@ -846,6 +848,33 @@ a:visited {
     top: 5rem;
     width: 30%;
   }
+}
+
+// Footer in Contact Page
+
+.footer-container-wrapper--contact {
+  margin-top: 0.2rem;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #000;
+  display: flex;
+  // align-items: center;
+  flex-direction: column;
+}
+
+.footer-secondary-container-wrapper--contact {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.menu-footer--contact {
+  width: 40em;
+}
+
+.menu-footer--contact ul {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 1600px) {
@@ -1018,10 +1047,16 @@ a:visited {
     padding: 1em 0;
   }
 
-  .footer-container .container--logo {
+  .footer-container .container--logo,
+  .footer-container-wrapper--contact .container--logo {
     background-size: 10rem;
     width: 15rem;
     height: 5rem;
+  }
+
+  .menu-footer--contact ul {
+    flex-direction: column;
+    padding-left: 0;
   }
 
   .social-icon-wrap {
