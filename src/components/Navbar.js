@@ -58,7 +58,8 @@ function LangSelector(props) {
 
     const handleChangeLang = (lang) => {
         const { pathname, asPath, query } = props.route
-        props.route.push({ pathname, query }, asPath, { locale: lang })
+        props.route.push({ pathname, query }, asPath, { locale: lang });
+        localStorage.setItem("selected_lang", lang);
     }
 
     useEffect(() => {
