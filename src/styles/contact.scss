@@ -29,7 +29,7 @@
 
 .contact-container > .contact-title-text {
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 2px;
 }
 
@@ -41,9 +41,6 @@
 
   width: 50%;
   margin: 0 auto;
-
-  max-width: 70rem;
-  width: 100%;
 }
 
 // .info-container {
@@ -226,6 +223,7 @@
   font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
+  border: none;
 }
 
 .contact-button:hover {
@@ -248,6 +246,19 @@
 .message-sent {
   margin: 2em 0;
   font-size: 1.5rem;
+}
+
+.button-subscribe-loading {
+  border-radius: 20rem;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  width: 12rem;
+  height: 2.5rem;
+  line-height: 2.2rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.2rem;
 }
 
 // Footer Contact Form
@@ -355,10 +366,6 @@
     padding: 1rem 0 1rem 0.5rem;
   }
 }
-
-@media screen and (max-width: 720px) {
-}
-
 @media screen and (max-width: 680px) {
   .contact-title-text-container {
     padding: 10rem 2rem;
