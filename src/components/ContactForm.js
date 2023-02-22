@@ -1,5 +1,5 @@
 import { Grid, Typography } from "@material-ui/core";
-import { TextField, TextAreaField, NumericField } from "../components/Fields";
+import { TextField, TextAreaField } from "../components/Fields";
 import { useTranslation } from "next-i18next";
 import { useState } from "react";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
