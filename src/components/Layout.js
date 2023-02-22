@@ -4,7 +4,6 @@ import Footer from './../components/Footer';
 import imagesLoaded from 'imagesloaded';
 import { useRouter } from 'next/router';
 
-
 const Layout = ({children}) => {
     const router = useRouter();
     const [loaded, setLoaded] = useState(false);
