@@ -262,6 +262,7 @@
   cursor: pointer;
   transition: 0.3s;
   color: #fff;
+  border: none;
 }
 
 .footer-button:hover {
@@ -313,6 +314,9 @@
   .contact-title-text-container .contact-body-text {
     width: 100%;
   }
+  .footer-btn-container {
+    justify-content: flex-start;
+  }
 }
 @media screen and (max-width: 880px) {
   .message-form-container {
@@ -333,6 +337,10 @@
     padding: 1rem 0 1rem 0.5rem;
   }
 }
+
+@media screen and (max-width: 720px) {
+}
+
 @media screen and (max-width: 680px) {
   .contact-title-text-container {
     padding: 10rem 2rem;

@@ -266,7 +266,7 @@ export const tempNavTranslation = (locale, value) => {
       home: "Inicio",
       suscribe: "Suscribirse al boletín",
       solutions: "Soluciones",
-      analysis: "Análisis de dato",
+      analysis: "Análisis de datos",
       development: "Desarrollo de software",
       process: "Línea de proceso",
       terms: "Condiciones de uso",
