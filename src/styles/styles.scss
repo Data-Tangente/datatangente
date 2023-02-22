@@ -903,10 +903,6 @@ a:visited {
     margin: 0.5rem 0;
   }
 
-  .footer-container .social-icon-wrap {
-    margin-left: -10px;
-  }
-
   .footer-container .footer-subscribe {
     margin-bottom: 1rem;
   }
@@ -1006,6 +1002,32 @@ a:visited {
 }
 
 @media screen and (max-width: 720px) {
+  .footer-container > div {
+    margin: 0 1em;
+  }
+
+  .left-container,
+  .menu-footer {
+    width: 60%;
+    padding-bottom: 1em;
+    border-bottom: 1px solid white;
+  }
+
+  .menu-footer,
+  .contact {
+    padding: 1em 0;
+  }
+
+  .footer-container .container--logo {
+    background-size: 10rem;
+    width: 15rem;
+    height: 5rem;
+  }
+
+  .social-icon-wrap {
+    margin: 0;
+  }
+
   .big-division-content .big-division-text-container {
     width: 100%;
   }
