@@ -29,7 +29,7 @@
 
 .contact-container > .contact-title-text {
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 2px;
 }
 
@@ -41,6 +41,9 @@
 
   width: 50%;
   margin: 0 auto;
+
+  max-width: 70rem;
+  width: 100%;
 }
 
 // .info-container {
@@ -247,6 +250,54 @@
   font-size: 1.5rem;
 }
 
+// Footer Contact Form
+
+.footer-form {
+  color: #fff;
+}
+
+.contact-input-container {
+  margin: 0.5em 0;
+}
+
+.footer-form > .contact-input-container input {
+  padding: 0.5em;
+}
+
+.footer-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.footer-button {
+  background-color: #f15738;
+  padding: 0.8em 1em;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #fff;
+  border: none;
+}
+
+.footer-button:hover {
+  background-color: #be381d;
+}
+
+.footer-error {
+  display: none;
+}
+
+.footer-error.show {
+  display: block;
+  transition: all 0.2s ease;
+  margin: 0.5rem 0;
+  color: #ff4a4a;
+}
+
 @media screen and (max-width: 1700px) {
   .contact-info-container {
     padding: 0 10rem;
@@ -281,6 +332,9 @@
   .contact-title-text-container .contact-body-text {
     width: 100%;
   }
+  .footer-btn-container {
+    justify-content: flex-start;
+  }
 }
 @media screen and (max-width: 880px) {
   .message-form-container {
@@ -301,6 +355,10 @@
     padding: 1rem 0 1rem 0.5rem;
   }
 }
+
+@media screen and (max-width: 720px) {
+}
+
 @media screen and (max-width: 680px) {
   .contact-title-text-container {
     padding: 10rem 2rem;
