@@ -429,11 +429,19 @@ a:visited {
 // }
 
 // Big Division
+
+.big-division {
+  display: flex;
+  height: 100vh;
+}
+
 .big-division-content {
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
   z-index: 20;
+  top: 10em;
   width: 100%;
   // padding: 90px 10%;
   padding-top: 90px;
@@ -443,6 +451,8 @@ a:visited {
 
 .big-division-content .big-division-text-container {
   width: 75%;
+  text-align: center;
+  margin-top: 1em;
 }
 
 .big-division-text-container .big-division-section-title {
@@ -452,18 +462,27 @@ a:visited {
   font-weight: 300;
   cursor: pointer;
   transition: all 0.2s ease;
+  font-size: 2rem;
 }
 
 .big-division-section-title:hover {
   color: #f05638;
 }
 
-.big-division .big-division-content .solutions-icon {
-  max-width: 12rem;
+.big-division .react-parallax-bgimage {
+  height: 100vh !important;
 }
 
-.big-division .big-division-content .solutions-icon.icon-3 {
-  max-width: 10rem;
+.solutions-container .solutions-content .solutions-icon.icon-2 {
+  padding-top: 350px !important;
+}
+
+.solutions-container .solutions-content .solutions-icon.icon-1 {
+  padding-top: 0 !important;
+}
+
+.big-division .big-division-content .solutions-icon {
+  max-width: 12rem;
 }
 
 // WORK WITH
@@ -636,35 +655,38 @@ a:visited {
 // BOOKING
 
 .booking-container {
+  background-color: #f05638;
+  // width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
   padding: 5em;
   text-align: center;
 }
 
-.booking-title {
+.booking-title,
+.trusted-title {
   font-size: 2rem;
   text-align: center;
   letter-spacing: 8px;
   font-weight: 100;
   text-transform: uppercase;
   font-style: italic;
-  color: #f05638;
+  color: #fff;
   margin-right: 2em;
 }
 
-.booking_bold {
+.booking_bold,
+.trusted-bold {
   font-weight: 800;
 }
 
 .booking-button {
   color: #fff !important;
   border-radius: 10px;
-  background-color: #f46f43;
-  border: none;
+  background-color: transparent;
+  border: 1px solid #fff;
   padding: 10px 30px;
   line-height: 2.2rem;
   text-align: center;
@@ -676,7 +698,13 @@ a:visited {
 
 .booking-button:hover {
   cursor: pointer;
-  background-color: #f05638;
+}
+
+// TRUSTED OUR WORK
+// some properties are in the booking section
+
+.trusted-our-work {
+  margin-bottom: 1em;
 }
 
 // FOOTER
@@ -893,6 +921,10 @@ a:visited {
     width: 1200px;
     text-align: center;
   }
+
+  .solutions-container .solutions-content .solutions-icon.icon-2 {
+    padding-top: 250px !important;
+  }
 }
 
 @media screen and (max-width: 1260px) {
@@ -979,12 +1011,33 @@ a:visited {
     display: block;
   }
 
+  .booking-title,
+  .trusted-title {
+    margin-right: 0;
+  }
+
+  .trusted-title {
+    font-size: 1.5rem;
+  }
+
   // .side-menu-list--item {
   //   padding-left: 0rem;
   // }
 
   .slide-banner-btn-container .banner-slideshow-control-arrow {
     display: none !important;
+  }
+
+  .big-division {
+    flex-direction: column;
+  }
+
+  .big-division .react-parallax {
+    border-bottom: 4px solid #fff;
+  }
+
+  .big-division-content {
+    top: 0;
   }
 
   .big-division-content .big-division-text-container {
@@ -1027,6 +1080,10 @@ a:visited {
 
   .subscribe-input-form .contact-input-container input {
     width: 92%;
+  }
+
+  .solutions-container .solutions-content .solutions-icon.icon-2 {
+    padding-top: 200px !important;
   }
 }
 
@@ -1164,5 +1221,9 @@ a:visited {
 
   .big-division-content {
     padding: 90px 10px !important;
+  }
+
+  .solutions-container .solutions-content .solutions-icon.icon-2 {
+    padding-top: 100px !important;
   }
 }
