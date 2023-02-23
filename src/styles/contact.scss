@@ -23,7 +23,7 @@
 }
 
 .contact-container {
-  width: 50%;
+  min-width: 50%;
   margin: 1em auto;
 }
 
@@ -39,8 +39,11 @@
   justify-content: center;
   // padding: 0 20rem;
 
-  width: 50%;
   margin: 0 auto;
+}
+
+.info-container {
+  width: 80%;
 }
 
 // .info-container {
@@ -310,9 +313,6 @@
 }
 
 @media screen and (max-width: 1700px) {
-  .contact-info-container {
-    padding: 0 10rem;
-  }
   .message-container {
     padding: 0 10rem;
   }
@@ -321,21 +321,25 @@
   // }
 }
 @media screen and (max-width: 1290px) {
-  .contact-info-container {
-    padding: 0 5rem;
-  }
   .message-container {
     padding: 0 5rem;
   }
   // .contact-input-container {
   //   width: 25%;
   // }
+  .info-container {
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 1130px) {
   .info-container,
   .social-media-container {
     font-size: 1.1rem;
+  }
+
+  .info-container {
+    width: 80%;
   }
   .social-media-container .social-icon-container {
     font-size: 1.8rem;
@@ -351,28 +355,38 @@
   .message-form-container {
     padding: 1rem 4rem;
   }
-  .contact-title-text-container {
-    padding: 10rem 5rem;
-  }
 
   .info-container {
-    width: 73%;
+    flex-direction: column;
+    // width: 80%;
+  }
+
+  .info-container .address {
+    margin-left: 1em;
+    padding: 0;
+    align-items: center;
+    border-right: none;
+    width: 70%;
+  }
+
+  .info-container .phone-email-container {
+    padding: 0;
+  }
+  .contact-title-text-container {
+    padding: 10rem 5rem;
   }
   .social-media-container {
     width: 20%;
   }
-  .info-container .address,
-  .info-container .phone-number {
-    padding: 1rem 0 1rem 0.5rem;
-  }
+  // .info-container .address,
+  // .info-container .email,
+  // .info-container .phone-number {
+  //   font-size: 1rem;
+  // }
 }
 @media screen and (max-width: 680px) {
   .contact-title-text-container {
     padding: 10rem 2rem;
-  }
-
-  .contact-info-container {
-    padding: 0 2rem;
   }
   .message-container {
     padding: 0 2rem;
@@ -388,13 +402,16 @@
     margin-top: 1rem;
     width: 100%;
   }
+
+  .message-form-container {
+    padding: 1em 1.5em;
+  }
   .message-form-inputs-container {
     flex-direction: column;
   }
 
-  .contact-input-container {
-    width: 100%;
-    margin: 1rem 0;
+  .contact-container {
+    margin: 1em;
   }
 }
 @media screen and (max-width: 510px) {
@@ -404,22 +421,21 @@
   .contact-title-text-container .contact-body-text {
     display: none;
   }
-  .contact-info-container,
   .message-container {
     padding: 0 1rem;
   }
+
   .info-container {
     flex-direction: column;
     text-align: center;
-    width: 100%;
+    margin: 1em;
   }
-  .info-container .address,
-  .info-container .phone-number {
-    width: 90%;
-  }
+
   .info-container .address {
-    border: none;
-    border-bottom: 1px solid #f05638;
+    margin-left: 1em;
+    padding: 0;
+    align-items: center;
+    border-right: none;
   }
 }
 
