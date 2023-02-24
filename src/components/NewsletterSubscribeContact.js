@@ -105,6 +105,7 @@ const NewsletterForm = ({ status, message, onValidated }) => {
           {/* Input */}
           <div className="contact-input-container">
             <input
+              id="input-subscribe--contact"
               className="input-subscribe"
               onChange={(event) => setEmail(event?.target?.value ?? "")}
               type="email"
@@ -124,7 +125,7 @@ const NewsletterForm = ({ status, message, onValidated }) => {
               <CircularProgressLoading />
             </div>
           ) : (
-            <div className="button-subscribe">
+            <div className="button-subscribe" id="button-subscribe--contact">
               <span onClick={handleFormSubmit}>
                 {t("home.buttons.subscribe")}
               </span>
@@ -145,14 +146,16 @@ const NewsletterForm = ({ status, message, onValidated }) => {
 };
 
 // use the render prop and your custom form
-const NewsletterSubscribe = () => {
+const NewsletterSubscribeContact = () => {
   const { t } = useTranslation();
   const url = process.env.NEXT_PUBLIC_MAILCHIMP;
 
   return (
-    <div className="subscribe-division-wrap">
+    <div
+      className="subscribe-division-wrap"
+      id="subscribe-division-wrap--contact">
       <div className="subscribe-title-text">
-        <span style={{ fontWeight: 700 }}>
+        <span style={{ fontWeight: 300 }}>
           {t("home.subscribe.subscribe")}&nbsp;
         </span>
         <span style={{ fontWeight: 300 }}>{t("home.subscribe.news")}</span>
@@ -177,4 +180,4 @@ const NewsletterSubscribe = () => {
   );
 };
 
-export default NewsletterSubscribe;
+export default NewsletterSubscribeContact;
