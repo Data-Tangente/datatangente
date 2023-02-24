@@ -11,6 +11,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import BookingDivision from "../components/BookingDivision";
 import NewsletterSubscribe from "../components/NewsletterSubscribe";
+import NewsletterSubscribeContact from "../components/NewsletterSubscribeContact";
 
 function Contact() {
   const { t } = useTranslation();
@@ -319,7 +320,7 @@ function Contact() {
       )}
       <BookingDivision />
       {/* <SubsDivision /> */}
-      <NewsletterSubscribe />
+      <NewsletterSubscribeContact />
     </>
   );
 }
