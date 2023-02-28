@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import {Typography, Grid} from '@material-ui/core';
 import Link from 'next/link';
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes, faGlobe, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from 'next/router';
-import { useTranslation, Trans } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 import { langs } from '../utils/index';
 import { tempNavTranslation } from '../functions/generalMethods';
 
@@ -58,7 +58,8 @@ function LangSelector(props) {
 
     const handleChangeLang = (lang) => {
         const { pathname, asPath, query } = props.route
-        props.route.push({ pathname, query }, asPath, { locale: lang })
+        props.route.push({ pathname, query }, asPath, { locale: lang });
+        localStorage.setItem("selected_lang", lang);
     }
 
     useEffect(() => {
