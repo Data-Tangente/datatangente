@@ -560,8 +560,9 @@ a:visited {
 
 .subscribe-division-wrap {
   margin-top: 0.2rem;
-  // width: 100%;
-  padding: 50px 10em;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
   background: linear-gradient(
     90deg,
     rgba(240, 86, 56, 1) 0%,
@@ -739,26 +740,28 @@ a:visited {
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: #f05638;
+  background-color: #000;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.footer-container {
+.footer-container,
+.footer-container--contact {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
   width: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.8);
 }
 
-.footer-container .container--logo {
-  background: url("/assets/logo_white.png") no-repeat;
-  background-size: 12rem;
-  width: 12rem;
-  height: 5rem;
+.footer-container .container--logo,
+.footer-container-wrapper--contact .container--logo {
+  background: url("/assets/logo_white-orange.png") no-repeat;
+  background-size: 18rem;
+  width: 22rem;
+  height: 9rem;
 }
 
 .footer-container > div {
@@ -767,13 +770,34 @@ a:visited {
 
 .menu-footer ul {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   padding: 0;
+  margin: 0;
 }
 
 .menu-footer ul > h6 {
   margin-right: 1rem;
+}
+
+// .about {
+// }
+
+.about > .about--,
+.solutions > .solutions--,
+.home > .home--,
+.posts > .posts--,
+.contact > .contact-- {
+  color: #f15738;
+  font-weight: 700;
+}
+
+.container-menu-footer {
+  margin-bottom: 0.75rem;
+}
+
+.posts > .posts--:hover {
+  color: #ffbf64;
 }
 
 .conditions-container .menu--item.footer a:any-link,
@@ -808,24 +832,32 @@ a:visited {
   display: inline-block;
 }
 
+.social-icon-wrap {
+  margin: 1rem 0;
+}
+
 .address-icon-container,
-.social-icon-container,
-.phone-icon-container {
+.phone-icon-container,
+.email-icon-container {
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding-right: 0.7rem;
+}
+
+.footer-mail {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.social-icon-container {
+  padding-right: 1rem;
+  color: #fff;
+  font-size: 2rem;
 }
 
 .phone-icon-container {
   font-size: 1rem;
-}
-
-.social-icon-container {
-  font-size: 2rem;
-}
-
-.social-icon-container {
-  padding-left: 0.7rem;
 }
 
 .social-icon-container:hover {
@@ -847,6 +879,12 @@ a:visited {
   // max-width: 10rem;
 }
 
+.footer-number,
+.footer-mail,
+.footer-address {
+  padding-bottom: 1rem;
+}
+
 .conditions-container {
   margin-top: 1rem;
 }
@@ -860,6 +898,33 @@ a:visited {
     top: 5rem;
     width: 30%;
   }
+}
+
+// Footer in Contact Page
+
+.footer-container-wrapper--contact {
+  margin-top: 0.2rem;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #000;
+  display: flex;
+  // align-items: center;
+  flex-direction: column;
+}
+
+.footer-secondary-container-wrapper--contact {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.menu-footer--contact {
+  width: 40em;
+}
+
+.menu-footer--contact ul {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 1600px) {
@@ -915,10 +980,6 @@ a:visited {
 
   .footer-container > div {
     margin: 0.5rem 0;
-  }
-
-  .footer-container .social-icon-wrap {
-    margin-left: -10px;
   }
 
   .footer-container .footer-subscribe {
@@ -1040,6 +1101,38 @@ a:visited {
 }
 
 @media screen and (max-width: 720px) {
+  .footer-container > div {
+    margin: 0 1em;
+  }
+
+  .left-container,
+  .menu-footer {
+    width: 60%;
+    padding-bottom: 1em;
+    border-bottom: 1px solid white;
+  }
+
+  .menu-footer,
+  .contact {
+    padding: 1em 0;
+  }
+
+  .footer-container .container--logo,
+  .footer-container-wrapper--contact .container--logo {
+    background-size: 10rem;
+    width: 15rem;
+    height: 5rem;
+  }
+
+  .menu-footer--contact ul {
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  .social-icon-wrap {
+    margin: 0;
+  }
+
   .big-division-content .big-division-text-container {
     width: 100%;
   }
@@ -1141,9 +1234,5 @@ a:visited {
 
   .big-division-content {
     padding: 90px 10px !important;
-  }
-
-  .subscribe-division-wrap {
-    padding: 30px 1em !important;
   }
 }

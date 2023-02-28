@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import {Typography, Grid, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@material-ui/core';
+import {Typography, Grid, Dialog, DialogContent, DialogTitle } from '@material-ui/core';
 import Link from 'next/link';
 import { PaginationNav } from '../../components/NavPagination';
 import Tags from '../../components/Tags';
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faCalendarAlt, faAlignLeft } from "@fortawesome/free-solid-svg-icons";
-import { dateFormat, getCurrentLangId } from '../../functions/generalMethods';
+import { dateFormat } from '../../functions/generalMethods';
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
