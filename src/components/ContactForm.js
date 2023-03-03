@@ -13,10 +13,7 @@ export default function ContactForm() {
   const { t } = useTranslation();
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
-  const [company, setCompany] = useState("");
-  const [position, setPosition] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [hearOfUs, setHearOfUs] = useState("");
   const [message, setMessage] = useState("");
   const [errorList, setErrorList] = useState({});
   const [messageSent, setMessageSent] = useState(false);
@@ -42,10 +39,7 @@ export default function ContactForm() {
   function clearForm() {
     setFullname("");
     setEmail("");
-    setCompany("");
-    setPosition("");
     setPhoneNumber("");
-    setHearOfUs("");
     setMessage("");
   }
 
@@ -89,31 +83,6 @@ export default function ContactForm() {
               errorClass={`error-msg ${errorList.email ? "show" : ""}`}
               errorText={"INTRODUZCA UN EMAIL VÁLIDO. Ej: correo@dominio.com"}
             />
-
-            <TextField
-              name="company"
-              type="text"
-              label={t("contact.fieldOrgTitle") + " :"}
-              placeholder={t("contact.fieldOrgPlaceholder")}
-              inputClass={`input-subscribe ${errorList.company ? "error" : ""}`}
-              onChange={(e) => {
-                setCompany(e.target.value);
-              }}
-              value={company}
-              errorClass={`error-msg ${errorList.company ? "show" : ""}`}
-            />
-            <TextField
-              name="position"
-              type="text"
-              label={t("contact.fieldOrgPositonTitle") + " :"}
-              placeholder={t("contact.fieldOrgPositonPlaceholder")}
-              inputClass={`input-subscribe ${errorList.company ? "error" : ""}`}
-              onChange={(e) => {
-                setPosition(e.target.value);
-              }}
-              value={position}
-              errorClass={`error-msg ${errorList.company ? "show" : ""}`}
-            />
             <TextField
               name="phoneNumber"
               type="text"
@@ -127,20 +96,6 @@ export default function ContactForm() {
               }}
               value={phoneNumber}
               errorClass={`error-msg ${errorList.phoneNumber ? "show" : ""}`}
-            />
-            <TextField
-              name="hearOfUs"
-              type="text"
-              label={t("contact.fieldHearOfUsTitle") + " :"}
-              placeholder={t("contact.fieldHearOfUsPlaceholder")}
-              inputClass={`input-subscribe ${
-                errorList.hearOfUs ? "error" : ""
-              }`}
-              onChange={(e) => {
-                setHearOfUs(e.target.value);
-              }}
-              value={hearOfUs}
-              errorClass={`error-msg ${errorList.hearOfUs ? "show" : ""}`}
             />
             <TextAreaField
               required
