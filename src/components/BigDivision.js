@@ -8,6 +8,8 @@ function BigDivision(props) {
   const content = [
     {
       title: t("home.solutions.development"),
+      subtitle: t("solutions.softwareBody"),
+
       body: "",
       justify: "flex-end",
       icon: "/assets/division2.png",
@@ -18,6 +20,7 @@ function BigDivision(props) {
     },
     {
       title: t("home.solutions.analysis"),
+      subtitle: t("solutions.analysisBody"),
       body: "",
       justify: "flex-start",
       icon: "/assets/division1.png",
@@ -32,26 +35,17 @@ function BigDivision(props) {
   return (
     <div className="big-division" style={{ width: "100%" }}>
       {getContent.map(
-        ({ title, href, icon, bgImg, direction, alignText, type }, index) => {
+        (
+          { title, subtitle, href, icon, bgImg, direction, alignText, type },
+          index
+        ) => {
           return (
             <Parallax
               key={title + "_" + index}
               bgImage={bgImg}
               bgImageAlt="solutions-division-bg-image"
               strength={400}
-              style={{
-                width: "100%",
-                borderRight: index !== content.length - 1 && "4px solid #fff",
-              }}>
-              {/* <div className="big-division-section"  key={title+"_"+index} style={{position:'relative', background: `url(${bgImg}) no-repeat`, backgroundSize: '100%', width:'100%', borderBottom:'4px solid #fff'}}> */}
-              <div
-                style={{
-                  position: "absolute",
-                  width: "100%",
-                  height: "100vh",
-                  zIndex: 10,
-                  backgroundColor: "rgb(0, 0, 0, .75)",
-                }}></div>
+              className="big-division-parallax">
               <Grid
                 className="big-division-content max-width--"
                 container
@@ -61,16 +55,26 @@ function BigDivision(props) {
                   className={`solutions-icon ${type} ${alignText}`}
                   src={icon}
                 />
+                {/* style=
+                {{
+                  position: "absolute",
+                  width: "100%",
+                  height: "100vh",
+                  zIndex: 10,
+                  backgroundColor: "rgb(0, 0, 0, .75)",
+                }} */}
                 <Grid
                   className="big-division-text-container"
                   container
                   item
-                  direction="column"
-                  style={{ padding: "0 3rem" }}>
+                  direction="column">
                   <Typography
                     variant="h5"
                     className="big-division-section-title">
                     <a href={href}>{title}</a>
+                  </Typography>
+                  <Typography className="big-division-section-subtitle">
+                    {subtitle}
                   </Typography>
                 </Grid>
               </Grid>

@@ -7,7 +7,6 @@ import ContactForm from "../components/ContactForm";
 function Contact() {
   return (
     <>
-      <BookingDivision />
       <ContactForm />
       <SubsDivision />
     </>

@@ -30,9 +30,11 @@ function FooterContactForm(props) {
         
             </div> */}
       <div className="footer-secondary-container-wrapper--contact">
-        <div className="container--logo"></div>
         <Grid item container className="footer-container--contact max-width--">
-          <div className="left-container--contact">
+          <div className="contact-footer left-container--contact">
+            <Typography variant="h6" className="contact-footer-title">
+              {tempNavTranslation(route.locale, "contactInfo")}
+            </Typography>
             <div className="footer-number">
               <span className="phone-icon-container">
                 <Icon icon={faPhoneAlt} />

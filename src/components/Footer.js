@@ -31,9 +31,10 @@ function Footer(props) {
         
             </div> */}
       <Grid item container className="footer-container max-width--">
-        <div className="left-container">
-          <div className="container--logo"></div>
-
+        <div className="contact-footer left-container">
+          <Typography variant="h6" className="contact-footer-title">
+            {tempNavTranslation(route.locale, "contactInfo")}
+          </Typography>
           <div className="footer-number">
             <span className="phone-icon-container">
               <Icon icon={faPhoneAlt} />
