@@ -13,10 +13,14 @@ export default function ContactForm() {
   const { t } = useTranslation();
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
+<<<<<<< HEAD
   const [company, setCompany] = useState("");
   const [position, setPosition] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [hearOfUs, setHearOfUs] = useState("");
+=======
+  const [phoneNumber, setPhoneNumber] = useState("");
+>>>>>>> a8c6a6c7f0f273f5a56f80c206430400b3033bbb
   const [message, setMessage] = useState("");
   const [errorList, setErrorList] = useState({});
   const [messageSent, setMessageSent] = useState(false);
@@ -42,10 +46,14 @@ export default function ContactForm() {
   function clearForm() {
     setFullname("");
     setEmail("");
+<<<<<<< HEAD
     setCompany("");
     setPosition("");
     setPhoneNumber("");
     setHearOfUs("");
+=======
+    setPhoneNumber("");
+>>>>>>> a8c6a6c7f0f273f5a56f80c206430400b3033bbb
     setMessage("");
   }
 
@@ -89,6 +97,7 @@ export default function ContactForm() {
               errorClass={`error-msg ${errorList.email ? "show" : ""}`}
               errorText={"INTRODUZCA UN EMAIL VÁLIDO. Ej: correo@dominio.com"}
             />
+<<<<<<< HEAD
 
             <TextField
               name="company"
@@ -114,6 +123,8 @@ export default function ContactForm() {
               value={position}
               errorClass={`error-msg ${errorList.company ? "show" : ""}`}
             />
+=======
+>>>>>>> a8c6a6c7f0f273f5a56f80c206430400b3033bbb
             <TextField
               name="phoneNumber"
               type="text"
@@ -128,6 +139,7 @@ export default function ContactForm() {
               value={phoneNumber}
               errorClass={`error-msg ${errorList.phoneNumber ? "show" : ""}`}
             />
+<<<<<<< HEAD
             <TextField
               name="hearOfUs"
               type="text"
@@ -142,6 +154,8 @@ export default function ContactForm() {
               value={hearOfUs}
               errorClass={`error-msg ${errorList.hearOfUs ? "show" : ""}`}
             />
+=======
+>>>>>>> a8c6a6c7f0f273f5a56f80c206430400b3033bbb
             <TextAreaField
               required
               name="message"
