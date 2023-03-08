@@ -441,16 +441,20 @@ a:visited {
   justify-content: center;
   position: relative;
   z-index: 20;
-  top: 10em;
   width: 100%;
+  height: 100%;
   // padding: 90px 10%;
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding: 5em 0;
   margin: 0 auto;
 }
 
+.react-parallax-content {
+  background-color: rgb(0, 0, 0, 0.75);
+  height: 100%;
+}
+
 .big-division-content .big-division-text-container {
-  width: 75%;
+  // width: 75%;
   text-align: center;
   margin-top: 1em;
 }
@@ -463,10 +467,19 @@ a:visited {
   cursor: pointer;
   transition: all 0.2s ease;
   font-size: 2rem;
+  max-width: 50%;
+  margin: 0 auto;
 }
 
 .big-division-section-title:hover {
   color: #f05638;
+}
+
+.big-division-text-container .big-division-section-subtitle {
+  color: #fff;
+  font-size: 1.2rem;
+  max-width: 75%;
+  margin: 0 auto;
 }
 
 .big-division .react-parallax-bgimage {
@@ -570,17 +583,11 @@ a:visited {
 
 // SUBSCRIBE
 
-// .container {
-//   display: flex;
-//   flex-direction: column;
-//   // align-items: center;
-//   justify-content: center;
-// }
-
 .subscribe-division-wrap {
   margin-top: 0.2rem;
-  // width: 100%;
-  padding: 50px 25em;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
   background: linear-gradient(
     90deg,
     rgba(240, 86, 56, 1) 0%,
@@ -589,65 +596,37 @@ a:visited {
   );
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-#subscribe-division-wrap--contact {
-  margin-top: 0;
-  // width: 100%;
-  padding: 50px 25em;
-  background: #000000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
 }
 
 .subscribe-division-wrap .container {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .subscribe-title-text {
   font-style: italic;
   color: #fff;
   width: 100%;
-  font-size: 2rem;
-  // text-align: center;
 }
 
 .subscribe-title-text > span {
   letter-spacing: 8px;
 }
 
-.subscribe-title-text-body {
-  font-weight: 700;
-  text-align: center;
-}
-
 .subscribe-input-form {
   display: flex;
   flex-direction: row;
-  // justify-content: space-between;
-  // margin-top: 3rem;
-  // padding-bottom: 20px;
-  width: 100%;
+  justify-content: space-between;
+  margin-top: 3rem;
 }
 
 .subscribe-input-form .contact-input-container {
-  width: 50%;
+  width: 20%;
 }
 
 .subscribe-input-form .contact-input-container input {
-  width: 100%;
-}
-
-#input-subscribe--contact {
-  background: transparent;
-  border: 1px solid white;
+  width: 90%;
 }
 
 .input-subscribe {
@@ -656,7 +635,7 @@ a:visited {
   border: none;
   background-color: #fff;
   height: 0.7rem;
-  width: 80%;
+  // width: 20%;
   font-size: 1.1rem;
   transition: all 0.1s ease;
 }
@@ -686,35 +665,18 @@ a:visited {
   border: 1px solid #dc5136;
 }
 
-#button-subscribe--contact:hover {
-  cursor: pointer;
-  background-color: #eee;
-  border: 1px solid #eee;
-  color: #000000;
-}
-
-.msg-container {
-  color: #fff;
-  text-align: center;
-}
-.thank-you-msg {
-  color: #fff;
-  font-style: italic;
-  font-weight: 600;
-  font-size: 1.5rem;
-  text-align: center;
-}
-
 // BOOKING
 
 .booking-container {
-  background-color: #f05638;
+  background-color: #000;
+  color: #f05638;
   // width: 100%;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 3em 5em;
+  height: 100vh;
   text-align: center;
 }
 
@@ -738,15 +700,15 @@ a:visited {
 .booking-button {
   color: #fff !important;
   border-radius: 10px;
-  background-color: transparent;
-  border: 1px solid #fff;
+  background-color: #f05638;
+  text-transform: uppercase;
   padding: 10px 30px;
   line-height: 2.2rem;
   text-align: center;
   font-weight: 500;
   font-size: 1.2rem;
   transition: all 0.2s ease;
-  box-shadow: 0 1.5px 5px hsla(0%, 0%, 0%, 0.2);
+  box-shadow: 0 1.5px 5px rgb(0 0 0 / 20%);
 }
 
 .booking-button:hover {
@@ -791,8 +753,12 @@ a:visited {
   height: 9rem;
 }
 
-.footer-container > div {
-  padding-bottom: 1rem;
+// .footer-container > div {
+//   padding-bottom: 1rem;
+// }
+
+.menu-footer {
+  margin-bottom: 2rem;
 }
 
 .menu-footer ul {
@@ -810,6 +776,7 @@ a:visited {
 // .about {
 // }
 
+.contact-footer > .contact-footer-title,
 .about > .about--,
 .solutions > .solutions--,
 .home > .home--,
@@ -974,12 +941,6 @@ a:visited {
   .solutions-container .solutions-content .solutions-icon.icon-2 {
     padding-top: 250px !important;
   }
-
-  .subscribe-division-wrap,
-  #subscribe-division-wrap--contact {
-    padding-left: 10em;
-    padding-right: 10em;
-  }
 }
 
 @media screen and (max-width: 1260px) {
@@ -1047,15 +1008,6 @@ a:visited {
   }
 }
 
-@media screen and (min-width: 1000px) {
-  .subscribe-division-wrap .container {
-    flex-direction: row;
-    align-items: center;
-    margin-top: 3rem;
-    padding-bottom: 20px;
-  }
-}
-
 @media screen and (max-width: 1000px) {
   .menu {
     display: none;
@@ -1115,10 +1067,6 @@ a:visited {
   .big-division .big-division-content .solutions-icon.icon-3 {
     max-width: 5rem;
   }
-
-  .subscribe-division-wrap .container {
-    flex-direction: row;
-  }
 }
 
 @media screen and (max-width: 920px) {
@@ -1137,14 +1085,13 @@ a:visited {
   .subscribe-input-form {
     flex-direction: column;
     align-items: center;
-    width: 80%;
   }
 
   .subscribe-input-form .contact-input-container,
   .subscribe-input-form .button-subscribe,
   .subscribe-input-form .button-subscribe-loading {
     width: 90%;
-    margin: 2rem 0;
+    margin: 1rem 0;
   }
 
   .subscribe-input-form .contact-input-container input {
