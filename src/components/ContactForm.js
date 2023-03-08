@@ -13,20 +13,10 @@ export default function ContactForm() {
   const { t } = useTranslation();
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> bf059e00a1ab6000b953a7fe939e32fa978d8557
   const [company, setCompany] = useState("");
   const [position, setPosition] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [hearOfUs, setHearOfUs] = useState("");
-<<<<<<< HEAD
-=======
-  const [phoneNumber, setPhoneNumber] = useState("");
->>>>>>> a8c6a6c7f0f273f5a56f80c206430400b3033bbb
-=======
->>>>>>> bf059e00a1ab6000b953a7fe939e32fa978d8557
   const [message, setMessage] = useState("");
   const [errorList, setErrorList] = useState({});
   const [messageSent, setMessageSent] = useState(false);
@@ -52,20 +42,10 @@ export default function ContactForm() {
   function clearForm() {
     setFullname("");
     setEmail("");
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> bf059e00a1ab6000b953a7fe939e32fa978d8557
     setCompany("");
     setPosition("");
     setPhoneNumber("");
     setHearOfUs("");
-<<<<<<< HEAD
-=======
-    setPhoneNumber("");
->>>>>>> a8c6a6c7f0f273f5a56f80c206430400b3033bbb
-=======
->>>>>>> bf059e00a1ab6000b953a7fe939e32fa978d8557
     setMessage("");
   }
 
@@ -109,10 +89,6 @@ export default function ContactForm() {
               errorClass={`error-msg ${errorList.email ? "show" : ""}`}
               errorText={"INTRODUZCA UN EMAIL VÁLIDO. Ej: correo@dominio.com"}
             />
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> bf059e00a1ab6000b953a7fe939e32fa978d8557
 
             <TextField
               name="company"
@@ -138,11 +114,6 @@ export default function ContactForm() {
               value={position}
               errorClass={`error-msg ${errorList.company ? "show" : ""}`}
             />
-<<<<<<< HEAD
-=======
->>>>>>> a8c6a6c7f0f273f5a56f80c206430400b3033bbb
-=======
->>>>>>> bf059e00a1ab6000b953a7fe939e32fa978d8557
             <TextField
               name="phoneNumber"
               type="text"
@@ -157,10 +128,6 @@ export default function ContactForm() {
               value={phoneNumber}
               errorClass={`error-msg ${errorList.phoneNumber ? "show" : ""}`}
             />
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> bf059e00a1ab6000b953a7fe939e32fa978d8557
             <TextField
               name="hearOfUs"
               type="text"
@@ -175,11 +142,6 @@ export default function ContactForm() {
               value={hearOfUs}
               errorClass={`error-msg ${errorList.hearOfUs ? "show" : ""}`}
             />
-<<<<<<< HEAD
-=======
->>>>>>> a8c6a6c7f0f273f5a56f80c206430400b3033bbb
-=======
->>>>>>> bf059e00a1ab6000b953a7fe939e32fa978d8557
             <TextAreaField
               required
               name="message"

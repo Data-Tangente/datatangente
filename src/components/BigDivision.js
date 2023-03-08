@@ -50,29 +50,23 @@ function BigDivision(props) {
                 className="big-division-content max-width--"
                 container
                 direction={direction}>
-                <img
-                  alt="solutions-icon"
-                  className={`solutions-icon ${type} ${alignText}`}
-                  src={icon}
-                />
-                {/* style=
-                {{
-                  position: "absolute",
-                  width: "100%",
-                  height: "100vh",
-                  zIndex: 10,
-                  backgroundColor: "rgb(0, 0, 0, .75)",
-                }} */}
                 <Grid
                   className="big-division-text-container"
                   container
                   item
                   direction="column">
-                  <Typography
-                    variant="h5"
-                    className="big-division-section-title">
-                    <a href={href}>{title}</a>
-                  </Typography>
+                  <a href={href} className="solutions-icon-container">
+                    <img
+                      alt="solutions-icon"
+                      className={`solutions-icon ${type} ${alignText}`}
+                      src={icon}
+                    />
+                    <Typography
+                      variant="h5"
+                      className="big-division-section-title">
+                      {title}
+                    </Typography>
+                  </a>
                   <Typography className="big-division-section-subtitle">
                     {subtitle}
                   </Typography>

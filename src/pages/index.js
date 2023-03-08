@@ -5,11 +5,11 @@ import Division from "./../components/Division";
 import BigDivision from "./../components/BigDivision";
 import WorkedDivision from "./../components/WorkedDivision";
 import PostCard from "./../components/PostCard";
-import SubsDivision from "./../components/SubscribeDivision";
 import BookingDivision from "./../components/BookingDivision";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { getPostsData } from "../functions/generalMethods";
+import NewsletterSubscribeContact from "../components/NewsletterSubscribeContact";
 
 export default function Home({ posts }) {
   const { t } = useTranslation();
@@ -38,7 +38,8 @@ export default function Home({ posts }) {
         textColor="#f05638"
       />
       <PostCard posts={posts} />
-      <SubsDivision />
+      {/* <SubsDivision /> */}
+      <NewsletterSubscribeContact />
     </div>
   );
 }
