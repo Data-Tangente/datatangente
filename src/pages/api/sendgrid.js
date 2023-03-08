@@ -9,13 +9,19 @@ export default async (req, res) => {
   Name: ${body.name}\r\n
   Email: ${body.email}\r\n
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bf059e00a1ab6000b953a7fe939e32fa978d8557
   Company: ${body.company}\r\n
   Position: ${body.position}\r\n
   Phone number: ${body.phoneNumber}\r\n
   Heard of us: ${body.hearOfUs}\r\n
+<<<<<<< HEAD
 =======
   Phone number: ${body.phoneNumber}\r\n
 >>>>>>> a8c6a6c7f0f273f5a56f80c206430400b3033bbb
+=======
+>>>>>>> bf059e00a1ab6000b953a7fe939e32fa978d8557
   Message: ${body.message}
   `;
 

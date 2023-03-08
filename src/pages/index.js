@@ -10,15 +10,20 @@ import BookingDivision from "./../components/BookingDivision";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { getPostsData } from "../functions/generalMethods";
-import NewsletterSubscribe from "../components/NewsletterSubscribe";
 
 export default function Home({ posts }) {
   const { t } = useTranslation();
   return (
     <div className="page-wrap">
       <Slideshow />
-      <BookingDivision />
       <BigDivision />
+      <BookingDivision />
+      {/* <Division
+        boldText={t("home.divisions.solutions")}
+        normalText={t("home.divisions.needs")}
+        bgColor="#f05638"
+        textColor="#fff"
+      /> */}
       {/* <Division
         boldText={t("home.divisions.trusted")}
         normalText={t("home.divisions.work")}
@@ -33,8 +38,7 @@ export default function Home({ posts }) {
         textColor="#f05638"
       />
       <PostCard posts={posts} />
-      {/* <SubsDivision /> */}
-      <NewsletterSubscribe />
+      <SubsDivision />
     </div>
   );
 }
@@ -45,6 +49,7 @@ export async function getStaticProps({ locale }) {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
       ...data,
+      // ...countryLanguages,
     },
   };
 }
