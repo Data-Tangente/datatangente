@@ -8,9 +8,9 @@ export default function Card({ posts }) {
   let contentTag = [];
   let cardSize;
   if (posts.length > 0 && posts.length < 3) {
-    cardSize = 4;
+    cardSize = 6;
   } else if (posts.length > 2) {
-    cardSize = 2;
+    cardSize = 4;
   }
   useEffect(() => {
     if (contentTag.length > 0) {
@@ -29,7 +29,7 @@ export default function Card({ posts }) {
               item
               container
               sm={12}
-              md={6}
+              md={8}
               lg={cardSize}
               key={post.id + "_" + index}
               className="card-post-expand-container">

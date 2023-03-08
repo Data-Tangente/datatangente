@@ -16,6 +16,7 @@ export default function Home({ posts }) {
   return (
     <div className="page-wrap">
       <Slideshow />
+      <BigDivision />
       <BookingDivision />
       {/* <Division
         boldText={t("home.divisions.solutions")}
@@ -23,7 +24,6 @@ export default function Home({ posts }) {
         bgColor="#f05638"
         textColor="#fff"
       /> */}
-      <BigDivision />
       {/* <Division
         boldText={t("home.divisions.trusted")}
         normalText={t("home.divisions.work")}

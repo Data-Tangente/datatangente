@@ -22,7 +22,7 @@
     "booking": {
       "book": "Book",
       "appointment": "an appointment with us!",
-      "book-appt": "Book appointment"
+      "book-appt": "Let's talk!"
     },
     "fields": {
       "name": "Name",

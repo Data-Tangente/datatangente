@@ -271,7 +271,8 @@ export const tempNavTranslation = (locale, value) => {
       process: "Línea de proceso",
       terms: "Condiciones de uso",
       privacy: "Privacidad",
-      contact: "Contáctanos",
+      contact: "Hablemos",
+      contactInfo: "Contacto",
     },
     en: {
       home: "Home",
@@ -280,6 +281,7 @@ export const tempNavTranslation = (locale, value) => {
       statistics: "Statistics",
       posts: "Posts",
       contact: "Contact",
+      contactInfo: "Contact",
       analysisBody: "Solutions and platforms according to your needs",
       softwareBody: "Check out our process line",
       processBody: "Custom platforms and softwares",
@@ -302,7 +304,7 @@ export const tempNavTranslation = (locale, value) => {
       process: "Process line",
       terms: "Terms of use",
       privacy: "Privacy",
-      contact: "Contact Us",
+      contact: "Let's talk",
     },
   };
   return data[locale][value];
