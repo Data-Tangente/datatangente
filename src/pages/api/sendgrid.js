@@ -8,10 +8,14 @@ export default async (req, res) => {
   const message = `
   Name: ${body.name}\r\n
   Email: ${body.email}\r\n
+<<<<<<< HEAD
   Company: ${body.company}\r\n
   Position: ${body.position}\r\n
   Phone number: ${body.phoneNumber}\r\n
   Heard of us: ${body.hearOfUs}\r\n
+=======
+  Phone number: ${body.phoneNumber}\r\n
+>>>>>>> a8c6a6c7f0f273f5a56f80c206430400b3033bbb
   Message: ${body.message}
   `;
 
