@@ -12,7 +12,7 @@ function BookingDivision() {
       </h1>
       <a
         target="_blank"
-        href="https://jeandeleon-datatangente.zohobookings.com/#/customer/datatangente"
+        href="https://outlook.office365.com/owa/calendar/DataTangente3@jeandeleon.com/bookings/"
         className="booking-button">
         {t("home.booking.book-appt")}
       </a>
