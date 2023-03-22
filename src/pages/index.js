@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-// import React, { useEffect } from 'react';
 import Slideshow from "./../components/Slideshow";
 import Division from "./../components/Division";
 import BigDivision from "./../components/BigDivision";
@@ -18,18 +17,6 @@ export default function Home({ posts }) {
       <Slideshow />
       <BigDivision />
       <BookingDivision />
-      {/* <Division
-        boldText={t("home.divisions.solutions")}
-        normalText={t("home.divisions.needs")}
-        bgColor="#f05638"
-        textColor="#fff"
-      /> */}
-      {/* <Division
-        boldText={t("home.divisions.trusted")}
-        normalText={t("home.divisions.work")}
-        bgColor="#f05638"
-        textColor="#fff"
-      /> */}
       <WorkedDivision bgColor="#f05638" />
       <Division
         boldText={t("home.divisions.posts")}
@@ -38,7 +25,6 @@ export default function Home({ posts }) {
         textColor="#f05638"
       />
       <PostCard posts={posts} />
-      {/* <SubsDivision /> */}
       <NewsletterSubscribeContact />
     </div>
   );
@@ -50,7 +36,6 @@ export async function getStaticProps({ locale }) {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
       ...data,
-      // ...countryLanguages,
     },
   };
 }
