@@ -5,7 +5,7 @@ import { Grid } from "@material-ui/core";
 function BookingDivision() {
   const { t } = useTranslation();
   return (
-    <section className="booking-container">
+    <section className="section booking-container">
       <h1 className="booking-title">
         <span className="booking_bold">{t("home.booking.book")} </span>
         {t("home.booking.appointment")}
