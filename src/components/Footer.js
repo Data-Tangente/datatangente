@@ -30,7 +30,7 @@ function Footer(props) {
       {/* <div className="max-width--">
         
             </div> */}
-      <Grid item container className="footer-container max-width--">
+      <Grid item container className="section footer-container max-width--">
         <div className="contact-footer left-container">
           <Typography variant="h6" className="contact-footer-title">
             {tempNavTranslation(route.locale, "contactInfo")}
