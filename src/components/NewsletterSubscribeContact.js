@@ -152,7 +152,7 @@ const NewsletterSubscribeContact = () => {
 
   return (
     <div
-      className="subscribe-division-wrap"
+      className="section subscribe-division-wrap"
       id="subscribe-division-wrap--contact">
       <div className="subscribe-title-text">
         <span style={{ fontWeight: 300 }}>
