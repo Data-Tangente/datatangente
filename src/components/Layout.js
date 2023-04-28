@@ -5,15 +5,19 @@ import imagesLoaded from "imagesloaded";
 import { useRouter } from "next/router";
 import FooterContactForm from "./FooterContactForm";
 
-const Layout = ({children}) => {
-    const router = useRouter();
-    const [loaded, setLoaded] = useState(false);
-    
-    useEffect(() => {
-        imagesLoaded(document.querySelector('.main'), {background: true}, function( instance ) {
-            setLoaded(true);
-        });
-    }, []);
+const Layout = ({ children }) => {
+  const router = useRouter();
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    imagesLoaded(
+      document.querySelector(".main"),
+      { background: true },
+      function (instance) {
+        setLoaded(true);
+      }
+    );
+  }, []);
 
   useEffect(() => {
     router.events.on("routeChangeComplete", () => {
@@ -47,7 +51,7 @@ const Layout = ({children}) => {
       <Navbar />
       {children}
 
-      {router.pathname === "/contact" ? <FooterContactForm /> : <Footer />}
+      {router.pathname === "/contact" ? <FooterContactForm /> : ""}
     </div>
   );
 };
