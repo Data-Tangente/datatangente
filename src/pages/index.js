@@ -9,11 +9,12 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { getPostsData } from "../functions/generalMethods";
 import NewsletterSubscribeContact from "../components/NewsletterSubscribeContact";
+import Footer from "../components/Footer";
 
 export default function Home({ posts }) {
   const { t } = useTranslation();
   return (
-    <div className="page-wrap">
+    <div className="page-wrap scroll-container">
       <Slideshow />
       <BigDivision />
       <BookingDivision />
@@ -26,6 +27,7 @@ export default function Home({ posts }) {
       />
       <PostCard posts={posts} />
       <NewsletterSubscribeContact />
+      <Footer />
     </div>
   );
 }
