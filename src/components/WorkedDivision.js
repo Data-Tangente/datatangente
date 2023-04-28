@@ -81,6 +81,7 @@ function WorkedDivision(props) {
   return (
     <Grid
       container
+      className="section"
       alignItems="center"
       justifyContent="center"
       style={{
