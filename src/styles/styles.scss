@@ -120,6 +120,27 @@ p {
   // position: relative;
 }
 
+html::-webkit-scrollbar {
+  display: none;
+}
+
+// Scroll Snap Sections
+
+.section {
+  // height: 100vh; specify the height of each section, 100vh changes every section
+  scroll-snap-align: start;
+}
+
+.scroll-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
 // NAVBAR
 a:any-link,
 a:visited {
@@ -433,6 +454,7 @@ a:visited {
 .big-division {
   display: flex;
   height: 100vh;
+  scroll-snap-align: start;
 }
 
 .big-division-content {
