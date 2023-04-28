@@ -32,7 +32,7 @@ export default function Card({ posts }) {
               md={8}
               lg={cardSize}
               key={post.id + "_" + index}
-              className="card-post-expand-container">
+              className="section card-post-expand-container">
               <a href={`/posts/${post.slug}`} className="card-post-container">
                 <Grid
                   container
