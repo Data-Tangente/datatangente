@@ -45,7 +45,7 @@ function BigDivision(props) {
               bgImage={bgImg}
               bgImageAlt="solutions-division-bg-image"
               strength={400}
-              className="big-division-parallax">
+              className="section big-division-parallax">
               <Grid
                 className="big-division-content max-width--"
                 container
