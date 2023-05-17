@@ -13,5 +13,4 @@ jobs:
     
     steps: 
       - name: Get latest code
-      
-      - uses: actions/checkout@main      
+        uses: actions/checkout@main      
