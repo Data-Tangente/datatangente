@@ -1,16 +1,29 @@
-name: Deploy
+name: Build and Deploy to cPanel
 
-on: 
+on:
   push:
     branches:
       - main
-            
+
 jobs:
-  web-deploy:
-    name: Deploy
-    
-    runs-on: windows-latest
-    
-    steps: 
-      - name: Get latest code
-        uses: actions/checkout@main      
+  build-and-deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to cPanel
+        uses: appleboy/scp-action@master
+        with:
+          host: p3plzcpnl484003
+          username: lycpgu1mkng7
+          password: ${{ secrets.CPANEL_PASSWORD }}
+          source: ./build/
+          target: public_html/
