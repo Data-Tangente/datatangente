@@ -1,27 +1,19 @@
-name: Build and Deploy to cPanel
-
+name: Publish Website to cPanel
 on:
   push:
-    branches: [ "master" ]
-
+    branches: 
+      - main
 jobs:
-  build-and-deploy:
-    runs-on: self-hosted
-
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build
-
-      - name: Deploy to cPanel
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: www.datatangente.com
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 2
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          server-dir: /
