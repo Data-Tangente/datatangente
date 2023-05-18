@@ -23,7 +23,7 @@ jobs:
         uses: appleboy/scp-action@master
         with:
           host: p3plzcpnl484003
-          username: lycpgu1mkng7
-          password: ${{ secrets.CPANEL_PASSWORD }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
           source: ./build/
           target: public_html/
