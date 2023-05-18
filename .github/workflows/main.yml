@@ -2,8 +2,7 @@ name: Build and Deploy to cPanel
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "master" ]
 
 jobs:
   build-and-deploy:
@@ -20,10 +19,9 @@ jobs:
         run: npm run build
 
       - name: Deploy to cPanel
-        uses: appleboy/scp-action@master
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          host: p3plzcpnl484003
+          server: www.datatangente.com
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          source: ./build/
-          target: public_html/
+          server-dir: /
