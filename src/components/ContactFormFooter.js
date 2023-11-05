@@ -24,7 +24,6 @@ export default function ContactFormFooter() {
       method: "POST",
       body: JSON.stringify(formData),
     });
-    // console.log(formData);
   }
 
   return (

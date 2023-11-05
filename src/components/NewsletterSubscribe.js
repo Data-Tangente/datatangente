@@ -8,7 +8,6 @@ import CircularProgressLoading from "./Loading";
 // simplest form (only email)
 
 const NewsletterForm = ({ status, message, onValidated }) => {
-  // console.log(status);
   const { t } = useTranslation();
 
   const [error, setError] = useState(null);
@@ -150,30 +149,33 @@ const NewsletterSubscribe = () => {
   const url = process.env.NEXT_PUBLIC_MAILCHIMP;
 
   return (
-    <div className="subscribe-division-wrap">
-      <div className="subscribe-title-text">
-        <span style={{ fontWeight: 700 }}>
-          {t("home.subscribe.subscribe")}&nbsp;
-        </span>
-        <span style={{ fontWeight: 300 }}>{t("home.subscribe.news")}</span>
-      </div>
-      <div style={{ color: "#fff", width: "100%" }}>
-        <span>{t("home.subscribe.keepUp")}</span>
-      </div>
-      <MailchimpSubscribe
-        url={url}
-        render={(props) => {
-          const { subscribe, status, message } = props || {};
-          return (
-            <NewsletterForm
-              status={status}
-              message={message}
-              onValidated={(formData) => subscribe(formData)}
-            />
-          );
-        }}
-      />
-    </div>
+      url ?
+        <div className="subscribe-division-wrap">
+          <div className="subscribe-title-text">
+            <span style={{ fontWeight: 700 }}>
+              {t("home.subscribe.subscribe")}&nbsp;
+            </span>
+            <span style={{ fontWeight: 300 }}>{t("home.subscribe.news")}</span>
+          </div>
+          <div style={{ color: "#fff", width: "100%" }}>
+            <span>{t("home.subscribe.keepUp")}</span>
+          </div>
+          <MailchimpSubscribe
+            url={url}
+            render={(props) => {
+              const { subscribe, status, message } = props || {};
+              return (
+                <NewsletterForm
+                  status={status}
+                  message={message}
+                  onValidated={(formData) => subscribe(formData)}
+                />
+              );
+            }}
+          />
+        </div>
+      :
+        null
   );
 };
 

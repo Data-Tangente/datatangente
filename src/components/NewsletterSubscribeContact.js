@@ -8,7 +8,6 @@ import CircularProgressLoading from "./Loading";
 // simplest form (only email)
 
 const NewsletterForm = ({ status, message, onValidated }) => {
-  // console.log(status);
   const { t } = useTranslation();
 
   const [error, setError] = useState(null);

@@ -94,10 +94,10 @@ export const getPostsData = async (locale) => {
     });
 
   posts.forEach((post) => {
-    post.tag_name = post.tags.edges
+    post.tag_name = post.tags?.edges
       .map(({ node }) => node)
       .map(({ name }) => name);
-    post.banner_img = post.featuredImage.node.sourceUrl;
+    post.banner_img = post.featuredImage?.node?.sourceUrl || '';
   });
 
   const page = {
@@ -174,23 +174,26 @@ export const getPostData = async (locale, params) => {
   post.tag_name = post.tags.edges
     .map(({ node }) => node)
     .map(({ name }) => name);
-  post.banner_img = post.featuredImage.node.sourceUrl;
-  post.translation = { ...data?.data.postBy.translation };
-  post.translation.tag_name = post.translation.tags.edges
+  post.banner_img = post.featuredImage?.node?.sourceUrl || '';
+  post.translation = { ...data?.data?.postBy?.translation };
+  post.translation.tag_name = post.translation?.tags?.edges
     .map(({ node }) => node)
     .map(({ name }) => name);
-  post.translation.banner_img = post.translation.featuredImage.node.sourceUrl;
+  post.translation.banner_img = post.translation?.featuredImage?.node?.sourceUrl || '';
 
   const site = {
     ...data?.data.generalSettings,
   };
 
-  return {
-    post,
-    language,
-    path: `/posts/${post.slug}`,
-    site,
-  };
+  if (post) {
+    return {
+      post,
+      language,
+      path: `/posts/${post.slug}`,
+      site,
+    }
+  }
+  return {}
 };
 
 export const getStaticData = async (locales) => {
